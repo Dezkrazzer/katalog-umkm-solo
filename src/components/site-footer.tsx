@@ -1,12 +1,11 @@
 import { cacheLife } from "next/cache";
 
-import { DemoNotice } from "@/components/demo-notice";
 import { KawungMark, OrnamentDivider, ParangPattern } from "@/components/ornament-divider";
 
-const APP_NAME = "Cita Rasa Peninggalan";
+const APP_NAME = "SoloFood";
 const APP_TAGLINE = "Jelajah Kuliner Khas Solo";
 const APP_DESCRIPTION =
-  "Katalog UMKM kuliner Surakarta, dari nasi liwet hingga selat Solo, yang menjaga resep turun-temurun tetap hidup.";
+  "Di era digital sekarang ini, mencari informasi mengenai UMKM yang menjual kuliner khas Kota Solo bisa menjadi tantangan. SoloFood hadir untuk memudahkan pencarian kuliner khas Solo, memberikan informasi yang akurat dan terpercaya, serta membantu pelaku UMKM lokal untuk lebih dikenal.";
 
 /**
  * Catatan: GALLERY_ID tidak diimpor dari hero-section karena file itu bertanda
@@ -64,7 +63,7 @@ export async function SiteFooter() {
               </h2>
               <p className="mt-1 text-sm font-medium text-olive">{APP_TAGLINE}</p>
             </div>
-            <p className="max-w-sm text-sm leading-relaxed text-muted-foreground text-pretty">
+            <p className="max-w-sm text-justify text-sm leading-relaxed text-muted-foreground text-pretty">
               {APP_DESCRIPTION}
             </p>
           </section>
@@ -109,7 +108,7 @@ export async function SiteFooter() {
         {/* Bagian bawah: catatan demo, kredit foto, copyright */}
         <div className="mx-auto mt-5 flex max-w-3xl flex-col items-center gap-1.5 text-center">
           <p className="text-sm text-muted-foreground">
-            © {year} Kelompok 1 - {APP_NAME}. Semua hak cipta dilindungi.
+            © {APP_NAME} {year}. All rights reserved.
           </p>
         </div>
       </div>
