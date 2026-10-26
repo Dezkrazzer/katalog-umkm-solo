@@ -3,8 +3,8 @@ import type { Umkm } from "@/data/umkm";
 export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-thengkleng-rica-rica-pak-manto-visited-link",
-    "nama": "Sate Kambing & Thengkleng Rica-Rica Pak Manto · Visited link",
-    "alamat": "Jl. Honggowongso No.36",
+    "nama": "Sate Kambing & Thengkleng Rica-Rica Pak Manto",
+    "alamat": "Jl. Honggowongso No.36, Sriwedari, Laweyan",
     "rating": 4.4,
     "jumlahUlasan": 18000,
     "rentangHarga": "Rp 50–100K",
@@ -18,7 +18,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-buntel-pak-h-kasdi",
     "nama": "Sate Kambing-Buntel Pak H. Kasdi",
-    "alamat": "Jl. Walter Monginsidi No.107",
+    "alamat": "Jl. Walter Monginsidi No.107, Kestalan, Banjarsari",
     "rating": 4.5,
     "jumlahUlasan": 6438,
     "rentangHarga": "Rp 25–50K",
@@ -32,7 +32,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-bu-hj-bejo",
     "nama": "Sate Kambing Bu Hj. Bejo",
-    "alamat": "Jl. Sungai Sebakung No.10",
+    "alamat": "Jl. Sungai Sebakung No.10, Kedung Lumbu, Pasar Kliwon",
     "rating": 4.5,
     "jumlahUlasan": 6191,
     "rentangHarga": "Rp 50–75K",
@@ -46,7 +46,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-buntel-badran-sate-kambing",
     "nama": "SATE BUNTEL BADRAN (Sate Kambing)",
-    "alamat": "Jl. Kenanga No.59",
+    "alamat": "Jl. Kenanga No.59, Badran, Purwosari",
     "rating": 4.7,
     "jumlahUlasan": 686,
     "rentangHarga": "Rp 50–75K",
@@ -60,7 +60,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-mbok-galak",
     "nama": "Sate Kambing Mbok Galak",
-    "alamat": "Jl. Ki Mangun Sarkoro No.112 Sumber Banjarsari",
+    "alamat": "Jl. Ki Mangun Sarkoro No.112, Sumber, Banjarsari",
     "rating": 4.4,
     "jumlahUlasan": 7472,
     "rentangHarga": "Rp 50–75K",
@@ -74,7 +74,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-sumber-pak-dahlan",
     "nama": "Sate Kambing Sumber Pak Dahlan",
-    "alamat": "Jl. Letjen Suprapto No.69",
+    "alamat": "Jl. Letjen Suprapto No.69, Sumber, Banjarsari",
     "rating": 4.4,
     "jumlahUlasan": 3324,
     "rentangHarga": "Rp 50–75K",
@@ -88,7 +88,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-man-gullit",
     "nama": "Sate Kambing Man Gullit",
-    "alamat": "Jl. Parang Kesit No.42",
+    "alamat": "Jl. Parang Kesit No.42, Sondakan, Laweyan",
     "rating": 4.7,
     "jumlahUlasan": 952,
     "rentangHarga": "Rp 25–50K",
@@ -102,7 +102,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-pak-h-bejo-solo-cabang-mangkunegaran",
     "nama": "Sate Kambing PAK H.BEJO SOLO cabang MANGKUNEGARAN",
-    "alamat": "Jl. Sugiyopranoto",
+    "alamat": "Jl. Sugiyopranoto, Keprabon, Banjarsari",
     "rating": 4.6,
     "jumlahUlasan": 1943,
     "rentangHarga": "Rp 25–50K",
@@ -114,23 +114,9 @@ export const umkmSateBuntel: Umkm[] = [
     "longitude": 110.8245176
   },
   {
-    "id": "sate-buntel-sate-babi-asli-tambaksegaran",
-    "nama": "Sate Babi Asli Tambaksegaran",
-    "alamat": "Jl. Sutan Syahrir No.153",
-    "rating": 4.3,
-    "jumlahUlasan": 1861,
-    "rentangHarga": "Rp 25–125K",
-    "kategori": "Restaurant",
-    "status": "Buka",
-    "jamBuka": "· Closes 9.00 pm",
-    "mapsUrl": "https://www.google.com/maps/place/Sate+Babi+Asli+Tambaksegaran/data=!4m7!3m6!1s0x2e7a17ca24b5f3d9:0x9e1ab9d423784a08!8m2!3d-7.56425!4d110.8265251!16s%2Fg%2F1pzsqtxn3!19sChIJ2fO1JMoXei4RCEp4I9S5Gp4?authuser=0&hl=en&g_ep=EgoyMDI2MTAyMC4wIJJjKgBIAVAD&rclk=1",
-    "latitude": -7.56425,
-    "longitude": 110.8265251
-  },
-  {
     "id": "sate-buntel-sate-kambing-pak-samin",
     "nama": "Sate Kambing Pak Samin",
-    "alamat": "Jl. Imam Bonjol No.3",
+    "alamat": "Jl. Imam Bonjol No.3, Keprabon, Banjarsari",
     "rating": 4.5,
     "jumlahUlasan": 650,
     "rentangHarga": "Rp 25–50K",
@@ -144,7 +130,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-gule-goreng-pak-samin",
     "nama": "Sate Kambing & Gule Goreng \"Pak Samin\"",
-    "alamat": "Jl. Ronggowarsito No.10",
+    "alamat": "Jl. Ronggowarsito No.10, Kampung Baru, Pasar Kliwon",
     "rating": 4.6,
     "jumlahUlasan": 933,
     "rentangHarga": "Rp 25–50K",
@@ -158,7 +144,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-mas-hjt",
     "nama": "Sate Kambing Mas HJT",
-    "alamat": "Jl. Kalimantan Kel No.03, RT.03/RW.03",
+    "alamat": "Jl. Kalimantan Kel No.03, RT.03/RW.03, Kestalan, Banjarsari",
     "rating": 4.6,
     "jumlahUlasan": 1133,
     "rentangHarga": "Rp 25–50K",
@@ -172,7 +158,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-pak-mardi-mangkunegaran",
     "nama": "Sate Kambing \"Pak Mardi\" Mangkunegaran",
-    "alamat": "Jl. Yosodipuro No.22",
+    "alamat": "Jl. Yosodipuro No.22, Ketelan, Banjarsari",
     "rating": 4.6,
     "jumlahUlasan": 1382,
     "rentangHarga": "Rp 25–50K",
@@ -186,7 +172,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-warung-sate-kambing-pak-mo",
     "nama": "Warung Sate Kambing \"Pak Mo\"",
-    "alamat": "CRR8+RH6, Jl. Hasanudin",
+    "alamat": "Jl. Hasanudin, Punggawan, Banjarsari",
     "rating": 4.7,
     "jumlahUlasan": 207,
     "rentangHarga": "Rp 25–50K",
@@ -200,7 +186,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-pak-narto",
     "nama": "Sate Kambing Pak Narto",
-    "alamat": "Kimia Farma (Joyosuran), Jl. Veteran",
+    "alamat": "Kimia Farma (Joyosuran), Jl. Veteran, Joyosuran, Pasar Kliwon",
     "rating": 4.4,
     "jumlahUlasan": 839,
     "rentangHarga": "Rp 25–50K",
@@ -214,7 +200,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-rm-sate-kambing-mungkung-sragen-cabang-solo",
     "nama": "RM SATE KAMBING MUNGKUNG SRAGEN CABANG SOLO",
-    "alamat": "Jl. Yosodipuro",
+    "alamat": "Jl. Yosodipuro, Punggawan, Banjarsari",
     "rating": 4.8,
     "jumlahUlasan": 36,
     "rentangHarga": "Rp 25–50K",
@@ -228,7 +214,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-muda-pak-jaman",
     "nama": "Sate Kambing Muda \"Pak Jaman\"",
-    "alamat": "Jl. Dr. Rajiman No.539",
+    "alamat": "Jl. Dr. Rajiman No.539, Laweyan",
     "rating": 4.6,
     "jumlahUlasan": 933,
     "rentangHarga": "Rp 25–50K",
@@ -242,7 +228,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-pak-narto-bu-tintin",
     "nama": "Sate Kambing Pak Narto (Bu Tintin)",
-    "alamat": "Jl. Kyai Mojo No.121",
+    "alamat": "Jl. Kyai Mojo No.121, Pasar Kliwon",
     "rating": 4.4,
     "jumlahUlasan": 1475,
     "rentangHarga": "Rp 50–75K",
@@ -256,7 +242,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-pak-h-djaman",
     "nama": "Sate Kambing \"Pak H. Djaman\"",
-    "alamat": "Jl. Slamet Riyadi No.582",
+    "alamat": "Jl. Slamet Riyadi No.582, Jajar, Laweyan",
     "rating": 4.6,
     "jumlahUlasan": 274,
     "rentangHarga": "Rp 25–50K",
@@ -270,7 +256,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-pak-min-sampangan",
     "nama": "Sate Kambing Pak Min Sampangan",
-    "alamat": "Jl. Sampangan, RT.02/RW.09",
+    "alamat": "Jl. Sampangan, RT.02/RW.09, Sangkrah, Pasar Kliwon",
     "rating": 4.6,
     "jumlahUlasan": 826,
     "rentangHarga": "Rp 25–50K",
@@ -284,7 +270,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-muda-balibull",
     "nama": "Sate Kambing Muda Balibull",
-    "alamat": "Jl. A. Yani No.219",
+    "alamat": "Jl. A. Yani No.219, Gumpang Lor, Pabelan",
     "rating": 4.5,
     "jumlahUlasan": 2142,
     "rentangHarga": "Rp 25–75K",
@@ -298,7 +284,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-mas-mario",
     "nama": "Sate Kambing Mas Mario",
-    "alamat": "Jl. Kapten Mulyadi",
+    "alamat": "Jl. Kapten Mulyadi, Kedung Lumbu, Pasar Kliwon",
     "rating": 4.6,
     "jumlahUlasan": 760,
     "rentangHarga": "Rp 25–50K",
@@ -340,7 +326,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-mas-wal",
     "nama": "Sate Kambing Mas Wal",
-    "alamat": "CRHM+F4W Shelter Lojiwetan, Jl. Kapten Mulyadi",
+    "alamat": "Shelter Lojiwetan, Jl. Kapten Mulyadi, Kedung Lumbu, Pasar Kliwon",
     "rating": 4.6,
     "jumlahUlasan": 412,
     "rentangHarga": "Rp 25–50K",
@@ -354,7 +340,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-pak-h-bejo-solo-cabang-bekonang",
     "nama": "Sate Kambing PAK H. BEJO SOLO,Cabang Bekonang",
-    "alamat": "9VPC+6JW, Jl. Abdul Latief",
+    "alamat": "Jl. Abdul Latief, Jepuh, Bekonang",
     "rating": 4.9,
     "jumlahUlasan": 387,
     "rentangHarga": "Rp 25–50K",
@@ -396,7 +382,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-nur-hidayah-sekip-solo",
     "nama": "Sate Kambing Nur Hidayah, Sekip Solo",
-    "alamat": "Alamat tidak tersedia",
+    "alamat": "Jl. Kolonel Sugiyono, Kadipiro, Banjarsari",
     "rating": 4.5,
     "jumlahUlasan": 245,
     "rentangHarga": "Rp 25–50K",
@@ -479,7 +465,7 @@ export const umkmSateBuntel: Umkm[] = [
   },
   {
     "id": "sate-buntel-tengkleng-solo-bu-jito-dlidir",
-    "nama": "Tengkleng Solo Bu Jito Dlidir",
+    "nama": "Tengkleng Solo Bu Jito Dlidir, Kadipiro, Banjarsari",
     "alamat": "Jl. Kolonel Sugiyono No.67",
     "rating": 4.3,
     "jumlahUlasan": 1413,
@@ -522,7 +508,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-pak-mesran",
     "nama": "Sate Kambing Pak Mesran",
-    "alamat": "Jl. Kapten Mulyadi",
+    "alamat": "Jl. Kapten Mulyadi, Kedung Lumbu, Pasar Kliwon",
     "rating": 4.2,
     "jumlahUlasan": 393,
     "rentangHarga": "Rp 25–50K",
@@ -550,7 +536,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-tengkleng-kambing-bu-pon",
     "nama": "Tengkleng Kambing Bu Pon",
-    "alamat": "Shelter Lojiwetan, Jl. Kapten Mulyadi",
+    "alamat": "Shelter Lojiwetan, Jl. Kapten Mulyadi, Kedung Lumbu, Pasar Kliwon",
     "rating": 4.4,
     "jumlahUlasan": 718,
     "rentangHarga": "Rp 25–50K",
@@ -690,7 +676,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-pak-giyono",
     "nama": "Sate Kambing Pak Giyono",
-    "alamat": "Jl. Kapten Mulyadi No.130",
+    "alamat": "Jl. Kapten Mulyadi No.130, Kedung Lumbu, Pasar Kliwon",
     "rating": 4.3,
     "jumlahUlasan": 141,
     "rentangHarga": null,
@@ -704,7 +690,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-pak-min-sithong",
     "nama": "Sate Pak Min Sithong",
-    "alamat": "Jl. Kapten Mulyadi No.287",
+    "alamat": "Jl. Kapten Mulyadi No.287, Pasar Kliwon",
     "rating": 4.7,
     "jumlahUlasan": 218,
     "rentangHarga": "Rp 25–50K",
@@ -802,7 +788,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-outlet-pusat-sate-buntel-sapi-pak-dar",
     "nama": "OUTLET PUSAT SATE BUNTEL SAPI PAK DAR",
-    "alamat": "Jl. Kapten Mulyadi No.250",
+    "alamat": "Jl. Kapten Mulyadi No.250, Pasar Kliwon",
     "rating": 5.0,
     "jumlahUlasan": 3,
     "rentangHarga": null,
@@ -830,7 +816,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-hidayah-pak-bejo",
     "nama": "Sate Kambing \"HIDAYAH\" Pak Bejo",
-    "alamat": "CRWJ+QX5, Jl. Tentara Genie Pelajar",
+    "alamat": "Jl. Tentara Genie Pelajar, Nusukan, Banjarsari",
     "rating": 4.6,
     "jumlahUlasan": 124,
     "rentangHarga": "Rp 25–50K",
@@ -956,7 +942,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-pakde-suk",
     "nama": "Sate Kambing Pakde Suk",
-    "alamat": "CRV3+H2Q, Jl. K.S. Tubun",
+    "alamat": "Jl. K.S. Tubun, Manahan",
     "rating": 4.8,
     "jumlahUlasan": 72,
     "rentangHarga": "Rp 25–50K",
@@ -984,7 +970,7 @@ export const umkmSateBuntel: Umkm[] = [
   {
     "id": "sate-buntel-sate-kambing-murah-meriah",
     "nama": "Sate Kambing Murah Meriah",
-    "alamat": "CRMF+XC5",
+    "alamat": "Jl. R. M. Said, Keprabon",
     "rating": 4.7,
     "jumlahUlasan": 3,
     "rentangHarga": null,
@@ -1038,17 +1024,17 @@ export const umkmSateBuntel: Umkm[] = [
     "longitude": 110.7884492
   },
   {
-    "id": "sate-buntel-sate-babi-pak-ciwir",
-    "nama": "Sate Babi Pak Ciwir",
-    "alamat": "Jl. Wonosaren",
-    "rating": 4.6,
-    "jumlahUlasan": 530,
-    "rentangHarga": "Rp 25–50K",
+    "id": "sate-buntel-sate-kambing-mas-saky",
+    "nama": "Sate Kambing Mas Saky",
+    "alamat": "Jl. R. M. Said No.14, Keprabon",
+    "rating": 3.9,
+    "jumlahUlasan": 44,
+    "rentangHarga": "Rp 25-50K",
     "kategori": "Satay restaurant",
     "status": "Buka",
-    "jamBuka": "· Closes 3.00 pm",
-    "mapsUrl": "https://www.google.com/maps/place/Sate+Babi+Pak+Ciwir/data=!4m7!3m6!1s0x2e7a17dc25292e81:0x31bd7884374c54a!8m2!3d-7.5648191!4d110.8437687!16s%2Fg%2F11k7vy3l8z!19sChIJgS4pJdwXei4RSsV0Q4jXGwM?authuser=0&hl=en&g_ep=EgoyMDI2MTAyMC4wIJJjKgBIAVAD&rclk=1",
-    "latitude": -7.5648191,
-    "longitude": 110.8437687
+    "jamBuka": "· Closes 5.00 pm",
+    "mapsUrl": "https://www.google.com/maps/place/Sate+Kambing+Mas+Saky/data=!4m6!3m5!1s0x2e7a16890f18b7df:0xf28776af51286e81!8m2!3d-7.5650309!4d110.8234748!16s%2Fg%2F11f_j3d0wb?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D",
+    "latitude": -7.564991921547058, 
+    "longitude": 110.82349310333997
   },
 ];
