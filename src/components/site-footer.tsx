@@ -23,9 +23,9 @@ const QUICK_LINKS = [
 const TEAM_MEMBERS = [
   { name: "Lazuardi Akbar Imani", id: "L0125105" },
   { name: "Miftahul Habibi", id: "L0125084" },
-  // { name: "Nama Anggota 3", id: "NIM 0000000003" },
-  // { name: "Nama Anggota 4", id: "NIM 0000000004" },
-  // { name: "Nama Anggota 5", id: "NIM 0000000005" },
+  { name: "Lucyana Dora Noviyanti", id: "L0125121" },
+  { name: "Phoebe Theodore Beatrice", id: "L0125060" },
+  { name: "Egifrid Angelo Mwoleka", id: "L0125096" },
 ];
 
 /**
