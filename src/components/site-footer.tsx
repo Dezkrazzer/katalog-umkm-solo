@@ -58,7 +58,6 @@ export async function SiteFooter() {
         <div className="grid gap-6 text-center md:grid-cols-[1.6fr_1fr_auto] md:gap-10 md:text-left">
           {/* Nama aplikasi + deskripsi */}
           <section aria-labelledby="footer-app-name" className="flex flex-col items-center gap-2 md:items-start">
-            <KawungMark className="size-7 text-gold" />
             <div>
               <h2 id="footer-app-name" className="font-heading text-2xl leading-tight text-primary">
                 {APP_NAME}
