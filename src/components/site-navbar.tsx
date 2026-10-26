@@ -1,9 +1,12 @@
 "use client";
 
+import type { MouseEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, MotionConfig, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 
@@ -18,15 +21,21 @@ const NAV_LINKS = [
 type SectionId = (typeof NAV_LINKS)[number]["id"];
 
 /** Returns the id of the section currently under the upper part of the viewport. */
-function useActiveSection(): SectionId {
-  const [active, setActive] = useState<SectionId>("beranda");
+function useActiveSection(initialSection: SectionId, disabled: boolean): SectionId {
+  const [active, setActive] = useState<SectionId>(initialSection);
 
   useEffect(() => {
+    if (disabled) return;
     let frame = 0;
 
     function update() {
       frame = 0;
       const doc = document.documentElement;
+      const sectionElements = NAV_LINKS.map((link) => document.getElementById(link.id)).filter(Boolean);
+      if (sectionElements.length === 0) {
+        setActive(initialSection);
+        return;
+      }
       // At the very bottom the footer may be too short to reach the marker line.
       if (window.innerHeight + window.scrollY >= doc.scrollHeight - 4) {
         setActive(NAV_LINKS[NAV_LINKS.length - 1].id);
@@ -53,13 +62,18 @@ function useActiveSection(): SectionId {
       window.removeEventListener("resize", onScroll);
       if (frame) cancelAnimationFrame(frame);
     };
-  }, []);
+  }, [disabled, initialSection]);
 
-  return active;
+  return disabled ? initialSection : active;
 }
 
-export function SiteNavbar() {
-  const active = useActiveSection();
+export function SiteNavbar({ activeSection }: { activeSection?: SectionId } = {}) {
+  const pathname = usePathname();
+  const isDetailPage = pathname.startsWith("/detail/");
+  const active = useActiveSection(
+    activeSection ?? (isDetailPage ? "galeri" : "beranda"),
+    isDetailPage || Boolean(activeSection),
+  );
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
@@ -100,6 +114,21 @@ export function SiteNavbar() {
 
   const activeLabel = NAV_LINKS.find((l) => l.id === active)?.label;
 
+  function handleNavClick(event: MouseEvent<HTMLAnchorElement>, sectionId: SectionId) {
+    if (isDetailPage) return;
+
+    event.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      section.scrollIntoView({
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+        block: "start",
+      });
+    }
+    window.history.replaceState(null, "", "/");
+  }
+
   return (
     <MotionConfig reducedMotion="user">
       <nav
@@ -110,9 +139,10 @@ export function SiteNavbar() {
         <div className="pointer-events-auto relative">
           {/* Pill bar */}
           <div className={cn("flex items-center gap-1 rounded-full p-1.5", glass)}>
-            <a
-              href="#beranda"
+            <Link
+              href="/"
               aria-label="Cita Rasa Peninggalan, ke beranda"
+              onClick={(event) => handleNavClick(event, "beranda")}
               className="grid size-9 shrink-0 place-items-center rounded-full text-gold transition-colors hover:bg-secondary/70 focus-visible:ring-4 focus-visible:ring-ring/60 focus-visible:outline-none motion-reduce:transition-none"
             >
               <Image
@@ -122,7 +152,7 @@ export function SiteNavbar() {
                 height={28}
                 className="size-7 rounded-full object-cover"
               />
-            </a>
+            </Link>
 
             {/* Links (tablet and up) */}
             <ul role="list" className="hidden items-center gap-0.5 sm:flex">
@@ -130,9 +160,10 @@ export function SiteNavbar() {
                 const isActive = link.id === active;
                 return (
                   <li key={link.id}>
-                    <a
-                      href={`#${link.id}`}
+                    <Link
+                      href="/"
                       aria-current={isActive ? "location" : undefined}
+                      onClick={(event) => handleNavClick(event, link.id)}
                       className={cn(
                         "relative isolate block rounded-full px-3.5 py-2 text-sm font-medium whitespace-nowrap transition-colors duration-200 focus-visible:ring-4 focus-visible:ring-ring/60 focus-visible:outline-none motion-reduce:transition-none md:px-4",
                         isActive
@@ -149,7 +180,7 @@ export function SiteNavbar() {
                         />
                       )}
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 );
               })}
@@ -195,10 +226,13 @@ export function SiteNavbar() {
                   const isActive = link.id === active;
                   return (
                     <li key={link.id}>
-                      <a
-                        href={`#${link.id}`}
+                      <Link
+                        href="/"
                         aria-current={isActive ? "location" : undefined}
-                        onClick={() => setMenuOpen(false)}
+                        onClick={(event) => {
+                          handleNavClick(event, link.id);
+                          setMenuOpen(false);
+                        }}
                         className={cn(
                           "block rounded-full px-4 py-2.5 text-center text-base font-medium transition-colors focus-visible:ring-4 focus-visible:ring-ring/60 focus-visible:outline-none motion-reduce:transition-none",
                           isActive
@@ -207,7 +241,7 @@ export function SiteNavbar() {
                         )}
                       >
                         {link.label}
-                      </a>
+                      </Link>
                     </li>
                   );
                 })}

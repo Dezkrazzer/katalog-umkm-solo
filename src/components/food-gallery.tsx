@@ -43,7 +43,6 @@ export function FoodGallery() {
           <p className="mt-3 max-w-prose text-base text-muted-foreground">
             Pilih hidangan untuk membaca kisah, cita rasa, dan alamat warungnya.
           </p>
-          <DemoNotice className="mt-6 text-left" />
         </div>
 
         <motion.ul
