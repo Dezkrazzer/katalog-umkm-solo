@@ -2,7 +2,7 @@
 
 import { MotionConfig, motion, useReducedMotion, type Variants } from "motion/react";
 
-import { daftarUmkm } from "@/data/umkm";
+import { daftarKuliner } from "@/data/foodData";
 import { FoodCard } from "@/components/food-card";
 import { DemoNotice } from "@/components/demo-notice";
 import { OrnamentDivider } from "@/components/ornament-divider";
@@ -54,8 +54,8 @@ export function FoodGallery() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          {daftarUmkm.map((item) => (
-            <motion.li key={item.id} variants={card} className="h-full">
+          {daftarKuliner.map((item) => (
+            <motion.li key={item.slug} variants={card} className="h-full">
               <FoodCard item={item} />
             </motion.li>
           ))}

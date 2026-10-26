@@ -2,7 +2,7 @@
 
 import { MapPin, X } from "lucide-react";
 
-import type { Umkm } from "@/data/umkm";
+import type { Kuliner } from "@/data/foodData";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -18,7 +18,7 @@ import { FoodImage } from "@/components/food-image";
 import { KawungMark } from "@/components/ornament-divider";
 
 type FoodDetailDialogProps = {
-  item: Umkm;
+  item: Kuliner;
 };
 
 /** Body of the detail dialog. Open/close animation comes from shadcn's DialogContent. */
@@ -43,9 +43,9 @@ export function FoodDetailDialog({ item }: FoodDetailDialogProps) {
       <div className="overflow-y-auto overscroll-contain">
         <AspectRatio ratio={16 / 10} className="bg-muted">
           <FoodImage
-            src={item.url_gambar}
-            alt={item.alt_gambar}
-            name={item.nama_makanan}
+            src={item.gambar}
+            alt={`Hidangan ${item.nama}`}
+            name={item.nama}
             sizes="(min-width: 640px) 672px, 100vw"
             eager
           />
@@ -57,11 +57,11 @@ export function FoodDetailDialog({ item }: FoodDetailDialogProps) {
               Data demo
             </Badge>
             <DialogTitle className="text-2xl leading-tight font-semibold tracking-tight text-primary sm:text-3xl">
-              {item.nama_makanan}
+              {item.nama}
             </DialogTitle>
-            <p className="text-base font-medium text-foreground">{item.nama_umkm}</p>
+            <p className="text-base font-medium text-foreground">Kuliner khas Surakarta</p>
             <DialogDescription className="text-base leading-relaxed text-muted-foreground">
-              {item.deskripsi_singkat}
+              {item.deskripsi}
             </DialogDescription>
           </DialogHeader>
 
@@ -71,20 +71,20 @@ export function FoodDetailDialog({ item }: FoodDetailDialogProps) {
             <Separator className="flex-1 bg-gold/40" />
           </div>
 
-          <section aria-labelledby={`kisah-${item.id}`} className="space-y-3">
-            <h3 id={`kisah-${item.id}`} className="text-xl font-semibold text-primary">
+          <section aria-labelledby={`kisah-${item.slug}`} className="space-y-3">
+            <h3 id={`kisah-${item.slug}`} className="text-xl font-semibold text-primary">
               Kisah &amp; Cita Rasa
             </h3>
             <p className="max-w-prose text-base leading-relaxed text-foreground">
-              {item.deskripsi_lengkap}
+              {item.deskripsiLengkap}
             </p>
           </section>
 
           <div className="flex items-start gap-3 rounded-md border border-border bg-background/60 p-4">
             <MapPin aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-gold" />
             <div className="space-y-1">
-              <p className="text-sm font-medium text-muted-foreground">Alamat fiktif (data demo)</p>
-              <p className="text-base text-foreground">{item.alamat}</p>
+              <p className="text-sm font-medium text-muted-foreground">Lokasi UMKM</p>
+              <p className="text-base text-foreground">Lihat daftar UMKM dan alamatnya pada halaman detail kuliner.</p>
             </div>
           </div>
         </div>

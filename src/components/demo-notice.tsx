@@ -3,7 +3,7 @@ import { Info } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const DEMO_NOTICE_TEXT =
-  "Data, nama usaha, dan alamat pada situs ini adalah contoh untuk keperluan demo. Kisah asal-usul makanan merupakan narasi populer.";
+  "Deskripsi kisah makanan adalah narasi pengenalan. Daftar UMKM dan alamat dicari dari OpenStreetMap, sehingga kelengkapan data dapat berbeda antarwilayah.";
 
 type DemoNoticeProps = {
   className?: string;
