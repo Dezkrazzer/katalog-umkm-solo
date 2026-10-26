@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, MotionConfig, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
-import { KawungMark } from "@/components/ornament-divider";
 
 /** Each link points at a section id on the home page. */
 const NAV_LINKS = [
@@ -115,7 +115,13 @@ export function SiteNavbar() {
               aria-label="Cita Rasa Peninggalan, ke beranda"
               className="grid size-9 shrink-0 place-items-center rounded-full text-gold transition-colors hover:bg-secondary/70 focus-visible:ring-4 focus-visible:ring-ring/60 focus-visible:outline-none motion-reduce:transition-none"
             >
-              <KawungMark className="size-6" />
+              <Image
+                src="/solofood_logo.png"
+                alt="SoloFood"
+                width={28}
+                height={28}
+                className="size-7 rounded-full object-cover"
+              />
             </a>
 
             {/* Links (tablet and up) */}

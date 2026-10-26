@@ -1,4 +1,5 @@
 import { cacheLife } from "next/cache";
+import Image from "next/image";
 
 import { KawungMark, OrnamentDivider, ParangPattern } from "@/components/ornament-divider";
 
@@ -57,11 +58,20 @@ export async function SiteFooter() {
         <div className="grid gap-6 text-center md:grid-cols-[1.6fr_1fr_auto] md:gap-10 md:text-left">
           {/* Nama aplikasi + deskripsi */}
           <section aria-labelledby="footer-app-name" className="flex flex-col items-center gap-2 md:items-start">
-            <div>
+            <div className="flex items-center gap-3">
+              <Image
+                src="/solofood_logo.png"
+                alt="Logo SoloFood"
+                width={64}
+                height={64}
+                className="size-14 rounded-md object-cover"
+              />
+              <div>
               <h2 id="footer-app-name" className="font-heading text-2xl leading-tight text-primary">
                 {APP_NAME}
               </h2>
               <p className="mt-1 text-sm font-medium text-olive">{APP_TAGLINE}</p>
+              </div>
             </div>
             <p className="max-w-sm text-justify text-sm leading-relaxed text-muted-foreground text-pretty">
               {APP_DESCRIPTION}
