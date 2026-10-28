@@ -4,7 +4,6 @@ import { MotionConfig, motion, useReducedMotion, type Variants } from "motion/re
 
 import { daftarKuliner } from "@/data/foodData";
 import { FoodCard } from "@/components/food-card";
-import { DemoNotice } from "@/components/demo-notice";
 import { OrnamentDivider } from "@/components/ornament-divider";
 import { GALLERY_HEADING_ID, GALLERY_ID } from "@/components/hero-section";
 

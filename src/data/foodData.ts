@@ -14,7 +14,7 @@ export const daftarKuliner: Kuliner[] = [
     deskripsi: 'Sate daging kambing cincang yang dibungkus lemak tipis, kemudian dibakar. Hidangan ini kaya rempah dan memiliki tekstur empuk.',
     deskripsiLengkap: 'Sate buntel dibuat dari daging kambing cincang yang dibalut lapisan lemak tipis lalu dibakar. Biasanya disajikan dengan kecap manis, irisan bawang merah, cabai, dan kol.',
     queryMaps: 'sate buntel UMKM Solo',
-    gambar: '/food_image/sate_buntel.jpg'
+    gambar: '/food_image/sate-buntel.jpg'
   },
   {
     slug: 'nasi-liwet',
