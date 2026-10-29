@@ -37,7 +37,7 @@ export function StatisticsSection() {
         {STATS.map(({ label, value, note, Icon }) => (
           <div
             key={label}
-            className="relative isolate overflow-hidden rounded-lg border border-gold/40 bg-card px-6 py-5 shadow-warm transition-shadow duration-300 hover:shadow-warm-lg"
+            className="relative isolate overflow-hidden rounded-lg border border-gold/40 bg-card px-6 py-5 shadow-warm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-gold hover:shadow-warm-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0"
           >
             {/* Ornamen kawung latar — dekoratif */}
             <KawungMark
