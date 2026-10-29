@@ -1,13 +1,21 @@
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/playfair-display";
 import "./globals.css";
 import { PrivacyNotice } from "@/components/privacy-notice";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { SITE_URL } from "@/lib/site";
 
 const siteName = "SoloFood - Cita Rasa Peninggalan: Kuliner Khas Solo";
-const siteDescription = "emukan UMKM yang menjual kuliner khas Kota Solo. SoloFood hadir untuk memudahkan pencarian kuliner khas Solo, memberikan informasi yang akurat dan terpercaya, serta membantu pelaku UMKM lokal untuk lebih dikenal.";
-const siteUrl = "https://solofood.lzuardiai.my.id";
+const siteDescription = "Temukan UMKM yang menjual kuliner khas Kota Solo. SoloFood hadir untuk memudahkan pencarian kuliner khas Solo, memberikan informasi yang akurat dan terpercaya, serta membantu pelaku UMKM lokal untuk lebih dikenal.";
+const siteUrl = SITE_URL;
+
+const javassoul = localFont({
+  src: "../../public/fonts/Javassoul.ttf",
+  variable: "--font-javassoul",
+  display: "swap",
+});
 
 const metadataBase = new URL(siteUrl);
 
@@ -94,7 +102,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="id" data-scroll-behavior="smooth">
+    <html lang="id" data-scroll-behavior="smooth" className={javassoul.variable}>
       <body>
         {children}
         <PrivacyNotice />

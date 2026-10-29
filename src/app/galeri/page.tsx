@@ -34,7 +34,7 @@ export default function GalleryPage() {
             <OrnamentDivider className="mt-6" />
           </header>
 
-          <PhotoGrid photos={daftarFotoGaleri} />
+          <PhotoGrid photos={daftarFotoGaleri} eagerCount={4} />
 
           <section aria-labelledby="kredit-foto" className="mt-16 rounded-2xl border border-gold/40 bg-card/80 p-5 shadow-warm sm:p-8">
             <h2 id="kredit-foto" className="text-2xl font-semibold text-primary">

@@ -147,22 +147,23 @@ export function NutritionSection() {
                     const value = gizi[nutrient.key];
                     const percent = (value / nutrient.daily) * 100;
                     return (
-                      <div key={nutrient.key} className="group/bar">
-                        <div className="flex items-baseline justify-between gap-3 text-sm">
-                          <dt className="inline-flex items-center gap-2 font-medium text-foreground">
-                            <span aria-hidden="true" className={cn("size-2.5 rounded-sm", nutrient.dot)} />
-                            {nutrient.label}
-                          </dt>
-                          <dd className="text-muted-foreground tabular-nums">
-                            <span className="font-semibold text-foreground">
-                              {numberFormat.format(value)} {nutrient.unit}
-                            </span>{" "}
-                            · {numberFormat.format(Math.round(percent))}%
-                          </dd>
-                        </div>
-                        <div
+                      <div
+                        key={nutrient.key}
+                        className="group/bar grid grid-cols-[1fr_auto] items-baseline gap-x-3 text-sm"
+                      >
+                        <dt className="inline-flex items-center gap-2 font-medium text-foreground">
+                          <span aria-hidden="true" className={cn("size-2.5 rounded-sm", nutrient.dot)} />
+                          {nutrient.label}
+                        </dt>
+                        <dd className="text-muted-foreground tabular-nums">
+                          <span className="font-semibold text-foreground">
+                            {numberFormat.format(value)} {nutrient.unit}
+                          </span>{" "}
+                          · {numberFormat.format(Math.round(percent))}%
+                        </dd>
+                        <dd
                           aria-hidden="true"
-                          className="mt-1.5 h-3 overflow-hidden rounded-full bg-muted ring-1 ring-border"
+                          className="col-span-2 mt-1.5 h-3 overflow-hidden rounded-full bg-muted ring-1 ring-border"
                         >
                           <motion.div
                             className={cn(
@@ -173,7 +174,7 @@ export function NutritionSection() {
                             animate={{ width: `${Math.min(percent, 100)}%` }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                           />
-                        </div>
+                        </dd>
                       </div>
                     );
                   })}

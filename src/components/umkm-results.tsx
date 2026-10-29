@@ -177,20 +177,31 @@ export function UmkmResults({ places }: { places: Umkm[] }) {
   const deferredQuery = useDeferredValue(query);
   const now = useNow();
 
+  // Lokasi hanya diambil otomatis jika izin sudah pernah diberikan. Selain itu
+  // pengguna menekan tombol dulu, sehingga browser tidak meminta izin saat halaman dibuka.
   useEffect(() => {
-    if (!navigator.geolocation) {
-      return;
-    }
+    if (!navigator.geolocation || !navigator.permissions) return;
+    let cancelled = false;
 
-    navigator.geolocation.getCurrentPosition(
-      ({ coords }) => {
-        setUserLocation({ latitude: coords.latitude, longitude: coords.longitude });
-      },
-      () => {
-        setLocationState("denied");
-      },
-      { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 },
-    );
+    navigator.permissions
+      .query({ name: "geolocation" })
+      .then((status) => {
+        if (cancelled || status.state !== "granted") return;
+        navigator.geolocation.getCurrentPosition(
+          ({ coords }) => {
+            if (!cancelled) setUserLocation({ latitude: coords.latitude, longitude: coords.longitude });
+          },
+          () => {
+            if (!cancelled) setLocationState("denied");
+          },
+          { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 },
+        );
+      })
+      .catch(() => {});
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // Pencarian dan urutan disimpan di URL (?q=&urut=) agar bisa dibagikan.
@@ -299,13 +310,16 @@ export function UmkmResults({ places }: { places: Umkm[] }) {
         <p className="mt-1 text-sm text-muted-foreground">
           Data hasil scraping Google Maps yang dikurasi untuk menampilkan usaha lokal.
         </p>
-        {locationState === "denied" && (
+        {!userLocation && locationState !== "loading" && (
           <button
             type="button"
             onClick={requestLocation}
             className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-primary underline-offset-4 hover:underline"
           >
-            <Navigation className="size-4" aria-hidden="true" /> Aktifkan lokasi untuk melihat jarak
+            <Navigation className="size-4" aria-hidden="true" />
+            {locationState === "denied"
+              ? "Aktifkan lokasi untuk melihat jarak"
+              : "Tampilkan jarak dari lokasi saya"}
           </button>
         )}
       </div>
@@ -369,7 +383,7 @@ export function UmkmResults({ places }: { places: Umkm[] }) {
           </div>
 
           <p className="text-sm text-muted-foreground" aria-live="polite">
-            {sort === "jarak" && locationState === "denied"
+            {sort === "jarak" && !userLocation && locationState !== "loading"
               ? "Izinkan akses lokasi agar UMKM bisa diurutkan berdasarkan jarak. "
               : ""}
             Menampilkan {visibleResults.length} dari {results.length} UMKM
@@ -523,7 +537,9 @@ export function UmkmResults({ places }: { places: Umkm[] }) {
                         <span className="font-normal text-primary-foreground/80">dari Anda</span>
                       </>
                     ) : (
-                      <span className="font-normal italic text-primary-foreground/80">{MISSING}</span>
+                      <span className="font-normal italic text-primary-foreground/80">
+                        {userLocation ? MISSING : "Jarak belum diketahui"}
+                      </span>
                     )}
                   </p>
                 </div>

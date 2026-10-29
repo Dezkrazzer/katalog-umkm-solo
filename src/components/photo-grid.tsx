@@ -10,11 +10,17 @@ import { cn } from "@/lib/utils";
 
 type PhotoGridProps = {
   photos: GalleryPhoto[];
+  /** Jumlah foto pertama yang dimuat langsung (di atas lipatan halaman). */
+  eagerCount?: number;
   className?: string;
 };
 
-/** Grid foto bergaya masonry. Klik foto untuk membuka tampilan penuh beserta kredit. */
-export function PhotoGrid({ photos, className }: PhotoGridProps) {
+/**
+ * Grid foto bergaya bento: foto potret mengambil dua baris. Urutan DOM sama
+ * dengan urutan tampilan, jadi foto pertama selalu yang terlihat lebih dulu.
+ * Klik foto untuk membuka tampilan penuh beserta kredit.
+ */
+export function PhotoGrid({ photos, eagerCount = 0, className }: PhotoGridProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const photo = openIndex === null ? null : photos[openIndex];
 
@@ -24,21 +30,30 @@ export function PhotoGrid({ photos, className }: PhotoGridProps) {
 
   return (
     <>
-      <ul role="list" className={cn("columns-2 gap-3 sm:gap-4 lg:columns-3", className)}>
+      <ul
+        role="list"
+        className={cn(
+          "grid grid-flow-row-dense auto-rows-[9rem] grid-cols-2 gap-3 sm:auto-rows-[12rem] sm:gap-4 lg:grid-cols-3",
+          className,
+        )}
+      >
         {photos.map((item, index) => (
-          <li key={item.id} className="mb-3 break-inside-avoid sm:mb-4">
+          <li key={item.id} className={item.src.height > item.src.width * 1.15 ? "row-span-2" : undefined}>
             <button
               type="button"
               onClick={() => setOpenIndex(index)}
               aria-label={`Lihat foto ${item.judul}`}
-              className="group/photo relative block w-full overflow-hidden rounded-lg border border-gold/30 bg-muted shadow-warm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-gold hover:shadow-warm-lg focus-visible:ring-4 focus-visible:ring-ring/60 focus-visible:outline-none motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+              className="group/photo relative block size-full overflow-hidden rounded-lg border border-gold/30 bg-muted shadow-warm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-gold hover:shadow-warm-lg focus-visible:ring-4 focus-visible:ring-ring/60 focus-visible:outline-none motion-reduce:transition-none motion-reduce:hover:translate-y-0"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
+                fill
                 placeholder="blur"
+                loading={index < eagerCount ? "eager" : "lazy"}
+                fetchPriority={index === 0 && eagerCount > 0 ? "high" : undefined}
                 sizes="(min-width: 1280px) 400px, (min-width: 1024px) 31vw, 48vw"
-                className="h-auto w-full transition-transform duration-500 ease-out group-hover/photo:scale-105 motion-reduce:transition-none motion-reduce:group-hover/photo:scale-100"
+                className="object-cover transition-transform duration-500 ease-out group-hover/photo:scale-105 motion-reduce:transition-none motion-reduce:group-hover/photo:scale-100"
               />
               <span className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-[#2b1d12]/80 via-transparent to-transparent p-3 text-left text-primary-foreground opacity-0 transition-opacity duration-300 group-hover/photo:opacity-100 group-focus-visible/photo:opacity-100 sm:p-4">
                 <span className="font-heading text-base font-semibold sm:text-lg">{item.judul}</span>
