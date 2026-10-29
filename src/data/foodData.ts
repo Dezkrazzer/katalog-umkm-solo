@@ -158,8 +158,8 @@ export const daftarKuliner: Kuliner[] = [
   {
     slug: 'sate-kere',
     nama: 'Sate Kere',
-    deskripsi: 'Sate dari tempe gembus yang dibakar dan disajikan dengan bumbu kacang khas Solo.',
-    deskripsiLengkap: 'Sate kere adalah sate yang terbuat dari tempe gembus, dibakar hingga harum, dan disajikan dengan bumbu kacang manis pedas. Hidangan ini populer di kalangan masyarakat Solo.',
+    deskripsi: 'Sate dari tempe gembus, koyor, ataupun jeroan sapi yang dibakar dan disajikan dengan bumbu kacang khas Solo.',
+    deskripsiLengkap: 'Sate kere adalah sate yang terbuat dari tempe gembus, koyor, ataupun jeroan sapi yang dibakar hingga harum, dan disajikan dengan bumbu kacang manis pedas. Hidangan ini populer di kalangan masyarakat Solo karena harganya yang murah namun memiliki rasa yang mirip dengan sate daging.',
     queryMaps: 'sate kere Solo UMKM',
     gambar: '/food_image/sate-kere.jpeg',
     kandunganGizi: {
