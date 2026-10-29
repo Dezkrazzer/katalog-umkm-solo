@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/playfair-display";
 import "./globals.css";
+import { PrivacyNotice } from "@/components/privacy-notice";
 
 const siteName = "SoloFood - Cita Rasa Peninggalan: Kuliner Khas Solo";
 const siteDescription = "emukan UMKM yang menjual kuliner khas Kota Solo. SoloFood hadir untuk memudahkan pencarian kuliner khas Solo, memberikan informasi yang akurat dan terpercaya, serta membantu pelaku UMKM lokal untuk lebih dikenal.";
@@ -93,7 +94,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="id">
-      <body>{children}</body>
+      <body>
+        {children}
+        <PrivacyNotice />
+      </body>
     </html>
   );
 }
