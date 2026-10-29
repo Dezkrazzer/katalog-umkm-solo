@@ -80,7 +80,7 @@ export const umkmLenjongan: Umkm[] = [
     "rentangHarga": null,
     "kategori": "Hawker stall",
     "status": "Tutup",
-    "jamBuka": ". Opens 7.00 am",
+    "jamBuka": "· Opens 7.00 am",
     "mapsUrl": "https://www.google.com/maps/place/Lenjongan+Bu+Rubi/data=!3m1!4b1!4m6!3m5!1s0x2e7a17007596ff93:0xb01687cc9d066e65!8m2!3d-7.5690611!4d110.831842!16s%2Fg%2F11nj2p05w5?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D",
     "latitude": -7.569023876261165, 
     "longitude": 110.83174544047856
@@ -108,7 +108,7 @@ export const umkmLenjongan: Umkm[] = [
     "rentangHarga": null,
     "kategori": "Shopping mall",
     "status": "Buka",
-    "jamBuka": ". Closes 6.00 pm",
+    "jamBuka": "· Closes 6.00 pm",
     "mapsUrl": "https://www.google.com/maps/place/Gethuk+Lenjongan+Bu+Lastri/data=!4m6!3m5!1s0x2e7a144ccae7afe9:0x9a45dd7ee060e2ed!8m2!3d-7.5703143!4d110.7761381!16s%2Fg%2F11hbvb0g11?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D",
     "latitude": -7.570305953706812, 
     "longitude": 110.77614571337242  
