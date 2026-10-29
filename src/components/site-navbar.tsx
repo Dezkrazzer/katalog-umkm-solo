@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
+import { scrollToElement } from "@/lib/smooth-scroll";
 
 /** Each link points at a section id on the home page. */
 const NAV_LINKS = [
@@ -69,11 +70,12 @@ function useActiveSection(initialSection: SectionId, disabled: boolean): Section
 
 export function SiteNavbar({ activeSection }: { activeSection?: SectionId } = {}) {
   const pathname = usePathname();
+  const isHomePage = pathname === "/";
   const isDetailPage = pathname.startsWith("/detail/");
-  const active = useActiveSection(
-    activeSection ?? (isDetailPage ? "galeri" : "beranda"),
-    isDetailPage || Boolean(activeSection),
-  );
+  const scrollSection = useActiveSection("beranda", !isHomePage || Boolean(activeSection));
+  // Halaman selain beranda dan detail (galeri, privasi) tidak menandai section mana pun.
+  const active: SectionId | null =
+    activeSection ?? (isHomePage ? scrollSection : isDetailPage ? "galeri" : null);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
@@ -112,20 +114,16 @@ export function SiteNavbar({ activeSection }: { activeSection?: SectionId } = {}
     scrolled ? "bg-card/70" : "bg-card/45",
   );
 
-  const activeLabel = NAV_LINKS.find((l) => l.id === active)?.label;
+  const activeLabel =
+    NAV_LINKS.find((l) => l.id === active)?.label ??
+    (pathname.startsWith("/galeri") ? "Galeri" : pathname.startsWith("/privasi") ? "Privasi" : "SoloFood");
 
   function handleNavClick(event: MouseEvent<HTMLAnchorElement>, sectionId: SectionId) {
-    if (isDetailPage) return;
+    if (!isHomePage) return;
 
     event.preventDefault();
     const section = document.getElementById(sectionId);
-    if (section) {
-      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      section.scrollIntoView({
-        behavior: prefersReducedMotion ? "auto" : "smooth",
-        block: "start",
-      });
-    }
+    if (section) scrollToElement(section);
     window.history.replaceState(null, "", "/");
   }
 
@@ -134,6 +132,7 @@ export function SiteNavbar({ activeSection }: { activeSection?: SectionId } = {}
       <nav
         ref={navRef}
         aria-label="Navigasi utama"
+        style={{ viewTransitionName: "site-header" }}
         className="pointer-events-none fixed inset-x-0 top-3 z-50 flex justify-center px-4 sm:top-4"
       >
         <div className="pointer-events-auto relative">
@@ -141,6 +140,7 @@ export function SiteNavbar({ activeSection }: { activeSection?: SectionId } = {}
           <div className={cn("flex items-center gap-1 rounded-full p-1.5", glass)}>
             <Link
               href="/"
+              transitionTypes={isHomePage ? undefined : ["nav-back"]}
               aria-label="Cita Rasa Peninggalan, ke beranda"
               onClick={(event) => handleNavClick(event, "beranda")}
               className="grid size-9 shrink-0 place-items-center rounded-full text-gold transition-colors hover:bg-secondary/70 focus-visible:ring-4 focus-visible:ring-ring/60 focus-visible:outline-none motion-reduce:transition-none"
@@ -161,7 +161,8 @@ export function SiteNavbar({ activeSection }: { activeSection?: SectionId } = {}
                 return (
                   <li key={link.id}>
                     <Link
-                      href="/"
+                      href={isHomePage ? "/" : `/#${link.id}`}
+                      transitionTypes={isHomePage ? undefined : ["nav-back"]}
                       aria-current={isActive ? "location" : undefined}
                       onClick={(event) => handleNavClick(event, link.id)}
                       className={cn(
@@ -227,7 +228,8 @@ export function SiteNavbar({ activeSection }: { activeSection?: SectionId } = {}
                   return (
                     <li key={link.id}>
                       <Link
-                        href="/"
+                        href={isHomePage ? "/" : `/#${link.id}`}
+                        transitionTypes={isHomePage ? undefined : ["nav-back"]}
                         aria-current={isActive ? "location" : undefined}
                         onClick={(event) => {
                           handleNavClick(event, link.id);

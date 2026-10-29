@@ -1,5 +1,6 @@
 import { cacheLife } from "next/cache";
 import Image from "next/image";
+import Link from "next/link";
 
 import { KawungMark, OrnamentDivider, ParangPattern } from "@/components/ornament-divider";
 
@@ -13,10 +14,11 @@ const APP_DESCRIPTION =
  * "use client", sehingga nilainya tidak bisa dipakai di Server Component ini.
  */
 const QUICK_LINKS = [
-  { label: "Beranda", href: "#beranda" },
-  { label: "Galeri Kuliner", href: "#galeri" },
-  { label: "Kandungan", href: "#kandungan" },
-  { label: "Tentang Kami", href: "#tentang" },
+  { label: "Beranda", href: "/#beranda" },
+  { label: "Daftar Kuliner", href: "/#galeri" },
+  { label: "Kandungan Gizi", href: "/#kandungan" },
+  { label: "Galeri Foto", href: "/galeri" },
+  { label: "Kebijakan Privasi", href: "/privasi" },
 ];
 
 // Ganti dengan nama dan NIM anggota kelompok yang sebenarnya.
@@ -86,12 +88,13 @@ export async function SiteFooter() {
             <ul className="mt-2 space-y-1.5">
               {QUICK_LINKS.map((link) => (
                 <li key={link.href + link.label}>
-                  <a
+                  <Link
                     href={link.href}
+                    transitionTypes={[link.href.startsWith("/#") ? "nav-back" : "nav-forward"]}
                     className="rounded-sm text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline focus-visible:ring-4 focus-visible:ring-ring/60 focus-visible:outline-none motion-reduce:transition-none"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

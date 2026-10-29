@@ -5,11 +5,12 @@ export interface Kuliner {
   gambar: string;
   deskripsiLengkap: string;
   queryMaps: string;
+  /** Kandungan gizi per porsi. Kalori dalam kkal, sisanya dalam gram. */
   kandunganGizi?: {
     kalori: number;
-    lemak: string;
-    karbohidrat: string;
-    protein: string;
+    lemak: number;
+    karbohidrat: number;
+    protein: number;
   };
 }
 
@@ -23,9 +24,9 @@ export const daftarKuliner: Kuliner[] = [
     gambar: '/food_image/sate-buntel.jpg',
     kandunganGizi: {
       kalori: 360,
-      lemak: "8 g",
-      karbohidrat: "41 g",
-      protein: "31 g"
+      lemak: 8,
+      karbohidrat: 41,
+      protein: 31,
     }
   },
   {
@@ -37,9 +38,9 @@ export const daftarKuliner: Kuliner[] = [
     gambar: '/food_image/nasi-liwet.jpg',
     kandunganGizi: {
       kalori: 138,
-      lemak: "2,72 g",
-      karbohidrat: "25,94 g",
-      protein: "2,74 g"
+      lemak: 2.72,
+      karbohidrat: 25.94,
+      protein: 2.74,
     }
   },
   {
@@ -51,9 +52,9 @@ export const daftarKuliner: Kuliner[] = [
     gambar: '/food_image/serabi.jpg',
     kandunganGizi: {
       kalori: 108,
-      lemak: "1,8 g",
-      karbohidrat: "21,05 g",
-      protein: "1,59 g"
+      lemak: 1.8,
+      karbohidrat: 21.05,
+      protein: 1.59,
     }
   },
   {
@@ -65,9 +66,9 @@ export const daftarKuliner: Kuliner[] = [
     gambar: '/food_image/tengkleng.jpg',
     kandunganGizi: {
       kalori: 290,
-      lemak: "9,2 g",
-      karbohidrat: "0 g",
-      protein: "23 g"
+      lemak: 9.2,
+      karbohidrat: 0,
+      protein: 23,
     }
   },
   {
@@ -79,9 +80,9 @@ export const daftarKuliner: Kuliner[] = [
     gambar: '/food_image/selat-solo.jpeg',
     kandunganGizi: {
       kalori: 344,
-      lemak: "12,35 g",
-      karbohidrat: "26,61 g",
-      protein: "31,56 g"
+      lemak: 12.35,
+      karbohidrat: 26.61,
+      protein: 31.56,
     }
   },
   {
@@ -93,9 +94,9 @@ export const daftarKuliner: Kuliner[] = [
     gambar: '/food_image/timlo-solo.jpg',
     kandunganGizi: {
       kalori: 318,
-      lemak: "12,67 g",
-      karbohidrat: "27,3 g",
-      protein: "23,42 g"
+      lemak: 12.67,
+      karbohidrat: 27.3,
+      protein: 23.42,
     }
   },
   {
@@ -107,9 +108,9 @@ export const daftarKuliner: Kuliner[] = [
     gambar: '/food_image/cabuk-rambak.jpeg',
     kandunganGizi: {
       kalori: 285,
-      lemak: "14 g",
-      karbohidrat: "36 g",
-      protein: "4 g"
+      lemak: 14,
+      karbohidrat: 36,
+      protein: 4,
     }
   },
   {
@@ -121,9 +122,9 @@ export const daftarKuliner: Kuliner[] = [
     gambar: '/food_image/brambang-asem.jpg',
     kandunganGizi: {
       kalori: 145,
-      lemak: "2.5 g",
-      karbohidrat: "24 g",
-      protein: "6.5 g"
+      lemak: 2.5,
+      karbohidrat: 24,
+      protein: 6.5,
     }
   },
   {
@@ -135,9 +136,9 @@ export const daftarKuliner: Kuliner[] = [
     gambar: '/food_image/sosis-solo.jpg',
     kandunganGizi: {
       kalori: 70,
-      lemak: "3,58 g",
-      karbohidrat: "5,57 g",
-      protein: "3,83 g"
+      lemak: 3.58,
+      karbohidrat: 5.57,
+      protein: 3.83,
     }
   },
   {
@@ -149,9 +150,9 @@ export const daftarKuliner: Kuliner[] = [
     gambar: '/food_image/tahu-kupat.jpg',
     kandunganGizi: {
       kalori: 391,
-      lemak: "10,89 g",
-      karbohidrat: "62,65 g",
-      protein: "11,26 g"
+      lemak: 10.89,
+      karbohidrat: 62.65,
+      protein: 11.26,
     }
   },
   {
@@ -163,9 +164,9 @@ export const daftarKuliner: Kuliner[] = [
     gambar: '/food_image/sate-kere.jpeg',
     kandunganGizi: {
       kalori: 395,
-      lemak: "28 g",
-      karbohidrat: "22 g",
-      protein: "14 g"
+      lemak: 28,
+      karbohidrat: 22,
+      protein: 14,
     }
   },
   {
@@ -177,9 +178,9 @@ export const daftarKuliner: Kuliner[] = [
     gambar: '/food_image/lenjongan.jpeg',
     kandunganGizi: {
       kalori: 360,
-      lemak: "8 g",
-      karbohidrat: "69 g",
-      protein: "3 g"
+      lemak: 8,
+      karbohidrat: 69,
+      protein: 3,
     }
   }
 ];
