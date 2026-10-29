@@ -8,6 +8,7 @@ import { DetailBackButton } from "@/components/detail-back-button";
 import { SiteNavbar } from "@/components/site-navbar";
 import { SiteFooter } from "@/components/site-footer";
 import { UmkmResults } from "@/components/umkm-results";
+import { PageTransition } from "@/components/page-transition";
 
 export function generateStaticParams() {
   return daftarKuliner.map(({ slug }) => ({ slug }));
@@ -25,37 +26,39 @@ function FoodDetailContent({ slug }: FoodDetailContentProps) {
     <>
       <SiteNavbar />
       <DetailBackButton />
-      <main className="pt-20">
-        <header
-          className="relative isolate min-h-124 overflow-hidden bg-background bg-cover bg-center"
-          style={{ backgroundImage: `url("${food.gambar}")` }}
-        >
-          <div className="absolute inset-0 -z-10 bg-linear-to-r from-background via-background/55 to-background/5" />
-          <div className="absolute inset-x-0 top-0 z-0 h-32 bg-linear-to-b from-background via-background/45 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 z-0 h-40 bg-linear-to-b from-transparent via-background/35 to-background" />
-          <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-            <div className="max-w-3xl">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-olive">Kuliner khas Surakarta</p>
-              <h1 className="mt-3 text-4xl font-semibold text-primary sm:text-6xl">{food.nama}</h1>
-              <p className="mt-5 text-lg leading-relaxed text-[#5A3A22]">{food.deskripsi}</p>
-              <p className="mt-4 leading-relaxed">{food.deskripsiLengkap}</p>
+      <PageTransition>
+        <main className="pt-20">
+          <header
+            className="relative isolate min-h-124 overflow-hidden bg-background bg-cover bg-center"
+            style={{ backgroundImage: `url("${food.gambar}")` }}
+          >
+            <div className="absolute inset-0 -z-10 bg-linear-to-r from-background via-background/55 to-background/5" />
+            <div className="absolute inset-x-0 top-0 z-0 h-32 bg-linear-to-b from-background via-background/45 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 z-0 h-40 bg-linear-to-b from-transparent via-background/35 to-background" />
+            <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+              <div className="max-w-3xl">
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-olive">Kuliner khas Surakarta</p>
+                <h1 className="mt-3 text-4xl font-semibold text-primary sm:text-6xl">{food.nama}</h1>
+                <p className="mt-5 text-lg leading-relaxed text-[#5A3A22]">{food.deskripsi}</p>
+                <p className="mt-4 leading-relaxed">{food.deskripsiLengkap}</p>
+              </div>
             </div>
-          </div>
-        </header>
-        <section className="mt-12 space-y-4" aria-labelledby="map-heading">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <h2 id="map-heading" className="text-2xl font-semibold text-primary">Peta Kuliner Solo</h2>
-            <div className="mt-4 overflow-hidden rounded-lg border border-border shadow-warm">
-              <iframe title={`Peta ${food.nama} di Solo`} src={`https://www.google.com/maps?q=${encodeURIComponent(`${food.nama}, Surakarta`)}&output=embed`} className="h-72 w-full border-0" loading="lazy" />
+          </header>
+          <section className="mt-12 space-y-4" aria-labelledby="map-heading">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+              <h2 id="map-heading" className="text-2xl font-semibold text-primary">Peta Kuliner Solo</h2>
+              <div className="mt-4 overflow-hidden rounded-lg border border-border shadow-warm">
+                <iframe title={`Peta ${food.nama} di Solo`} src={`https://www.google.com/maps?q=${encodeURIComponent(`${food.nama}, Surakarta`)}&output=embed`} className="h-72 w-full border-0" loading="lazy" />
+              </div>
+              <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground"><MapPin className="size-4 text-gold" />Peta membantu menemukan usaha warga di sekitar kawasan heritage Solo.</p>
             </div>
-            <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground"><MapPin className="size-4 text-gold" />Peta membantu menemukan usaha warga di sekitar kawasan heritage Solo.</p>
+          </section>
+          <div className="mx-auto mt-12 max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+            <UmkmResults places={daftarUmkmByKuliner[food.slug] ?? []} />
           </div>
-        </section>
-        <div className="mx-auto mt-12 max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
-          <UmkmResults places={daftarUmkmByKuliner[food.slug] ?? []} />
-        </div>
-      </main>
-      <SiteFooter />
+        </main>
+        <SiteFooter />
+      </PageTransition>
     </>
   );
 }

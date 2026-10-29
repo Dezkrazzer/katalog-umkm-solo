@@ -44,6 +44,7 @@ export function PrivacyNotice() {
         {visible && (
           <motion.aside
             aria-label="Pemberitahuan privasi"
+            style={{ viewTransitionName: "privacy-notice" }}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0, transition: { delay: 1.2, duration: 0.35, ease: "easeOut" } }}
             exit={{ opacity: 0, y: 16, transition: { duration: 0.2 } }}

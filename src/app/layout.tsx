@@ -3,6 +3,7 @@ import "@fontsource-variable/inter";
 import "@fontsource-variable/playfair-display";
 import "./globals.css";
 import { PrivacyNotice } from "@/components/privacy-notice";
+import { SmoothScroll } from "@/components/smooth-scroll";
 
 const siteName = "SoloFood - Cita Rasa Peninggalan: Kuliner Khas Solo";
 const siteDescription = "emukan UMKM yang menjual kuliner khas Kota Solo. SoloFood hadir untuk memudahkan pencarian kuliner khas Solo, memberikan informasi yang akurat dan terpercaya, serta membantu pelaku UMKM lokal untuk lebih dikenal.";
@@ -93,10 +94,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="id">
+    <html lang="id" data-scroll-behavior="smooth">
       <body>
         {children}
         <PrivacyNotice />
+        <SmoothScroll />
       </body>
     </html>
   );

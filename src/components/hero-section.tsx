@@ -6,6 +6,7 @@ import { ArrowDown } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { KawungMark, OrnamentDivider } from "@/components/ornament-divider";
+import { scrollToElement } from "@/lib/smooth-scroll";
 
 export const GALLERY_ID = "galeri";
 export const GALLERY_HEADING_ID = "galeri-judul";
@@ -30,8 +31,7 @@ export function HeroSection() {
     const heading = document.getElementById(GALLERY_HEADING_ID);
     if (!heading) return; // fall back to the plain #galeri anchor jump
     event.preventDefault();
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    heading.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "start" });
+    scrollToElement(heading);
     heading.focus({ preventScroll: true });
     history.replaceState(null, "", `#${GALLERY_ID}`);
   }

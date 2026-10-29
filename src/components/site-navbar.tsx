@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
+import { scrollToElement } from "@/lib/smooth-scroll";
 
 /** Each link points at a section id on the home page. */
 const NAV_LINKS = [
@@ -122,13 +123,7 @@ export function SiteNavbar({ activeSection }: { activeSection?: SectionId } = {}
 
     event.preventDefault();
     const section = document.getElementById(sectionId);
-    if (section) {
-      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      section.scrollIntoView({
-        behavior: prefersReducedMotion ? "auto" : "smooth",
-        block: "start",
-      });
-    }
+    if (section) scrollToElement(section);
     window.history.replaceState(null, "", "/");
   }
 
@@ -137,6 +132,7 @@ export function SiteNavbar({ activeSection }: { activeSection?: SectionId } = {}
       <nav
         ref={navRef}
         aria-label="Navigasi utama"
+        style={{ viewTransitionName: "site-header" }}
         className="pointer-events-none fixed inset-x-0 top-3 z-50 flex justify-center px-4 sm:top-4"
       >
         <div className="pointer-events-auto relative">

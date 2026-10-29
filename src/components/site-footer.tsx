@@ -90,6 +90,7 @@ export async function SiteFooter() {
                 <li key={link.href + link.label}>
                   <Link
                     href={link.href}
+                    transitionTypes={[link.href.startsWith("/#") ? "nav-back" : "nav-forward"]}
                     className="rounded-sm text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline focus-visible:ring-4 focus-visible:ring-ring/60 focus-visible:outline-none motion-reduce:transition-none"
                   >
                     {link.label}
