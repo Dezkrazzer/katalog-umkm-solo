@@ -1,7 +1,15 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Clock3, ExternalLink, MapPin, Navigation, Star } from "lucide-react";
+import {
+  Banknote,
+  Clock3,
+  ExternalLink,
+  MapPin,
+  MessageSquare,
+  Navigation,
+  Star,
+} from "lucide-react";
 
 import type { Umkm } from "@/data/umkm";
 
@@ -9,6 +17,8 @@ type Coordinates = {
   latitude: number;
   longitude: number;
 };
+
+const MISSING = "Data tidak tersedia";
 
 function distanceInKilometers(from: Coordinates, to: Coordinates) {
   const earthRadius = 6371;
@@ -25,6 +35,13 @@ function distanceInKilometers(from: Coordinates, to: Coordinates) {
 
 function formatDistance(distance: number) {
   return distance < 1 ? `${Math.round(distance * 1000)} m` : `${distance.toFixed(1)} km`;
+}
+
+/** true jika nilai benar-benar ada (bukan null/undefined/string kosong). */
+function hasValue(value: unknown): boolean {
+  if (value === null || value === undefined) return false;
+  if (typeof value === "string") return value.trim().length > 0;
+  return true;
 }
 
 type OperationalStatus = "open" | "closed" | "unknown";
@@ -44,13 +61,28 @@ function getOperationalStatus(hours: string | null): OperationalStatus {
   if (meridiem === "pm" && hour < 12) hour += 12;
   if (meridiem === "am" && hour === 12) hour = 0;
 
-  const currentMinutes = new Date().getHours() * 60 + new Date().getMinutes();
+  const now = new Date();
+  const currentMinutes = now.getHours() * 60 + now.getMinutes();
   const listedMinutes = hour * 60 + minute;
   const marker = timeMatch[1].toLowerCase();
   if (marker.startsWith("close") || marker === "tutup") {
     return currentMinutes < listedMinutes ? "open" : "closed";
   }
   return currentMinutes >= listedMinutes ? "open" : "closed";
+}
+
+const STATUS_STYLE: Record<
+  OperationalStatus,
+  { label: string; pill: string; dot: string }
+> = {
+  open: { label: "Buka", pill: "bg-olive/10 text-olive", dot: "bg-olive" },
+  closed: { label: "Tutup", pill: "bg-destructive/10 text-destructive", dot: "bg-destructive" },
+  unknown: { label: "Tidak diketahui", pill: "bg-muted text-muted-foreground", dot: "bg-muted-foreground" },
+};
+
+/** Teks placeholder seragam untuk data yang tidak tersedia. */
+function Missing() {
+  return <span className="italic text-muted-foreground">{MISSING}</span>;
 }
 
 export function UmkmResults({ places }: { places: Umkm[] }) {
@@ -123,7 +155,7 @@ export function UmkmResults({ places }: { places: Umkm[] }) {
             onClick={requestLocation}
             className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-primary underline-offset-4 hover:underline"
           >
-            <Navigation className="size-4" /> Aktifkan lokasi untuk melihat jarak
+            <Navigation className="size-4" aria-hidden="true" /> Aktifkan lokasi untuk melihat jarak
           </button>
         )}
       </div>
@@ -132,74 +164,145 @@ export function UmkmResults({ places }: { places: Umkm[] }) {
         <p className="text-muted-foreground">Belum ada data UMKM untuk kuliner ini.</p>
       )}
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-x-5 gap-y-6 sm:grid-cols-2">
         {places.map((place) => {
           const distance = distances.get(place.id);
-          const operationalStatus = getOperationalStatus(place.jamBuka);
-          const statusLabel = operationalStatus === "open" ? "Buka" : operationalStatus === "closed" ? "Tutup" : "Tidak Diketahui";
-          const statusClass = operationalStatus === "open" ? "text-olive" : operationalStatus === "closed" ? "text-destructive" : "text-muted-foreground";
-          const dotClass = operationalStatus === "open" ? "bg-olive" : operationalStatus === "closed" ? "bg-destructive" : "bg-muted-foreground";
+          const hoursAvailable = hasValue(place.jamBuka);
+          const status = STATUS_STYLE[getOperationalStatus(place.jamBuka)];
+          const hoursLines = hoursAvailable
+            ? (place.jamBuka as string)
+                .split(/\s*[⋅·•]\s*/)
+                .map((line) => line.trim())
+                .filter(Boolean)
+            : [];
+          const ratingAvailable = place.rating !== null && place.rating !== undefined;
 
           return (
-            <article
-              key={place.id}
-              className="relative h-full min-h-[20rem] overflow-hidden rounded-2xl border border-primary/20 bg-card shadow-warm"
-            >
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-[radial-gradient(ellipse_at_bottom,rgb(176_141_87/0.18),transparent_68%)]" />
-              <div className="relative flex h-full flex-1 flex-col p-5 sm:p-6">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg font-semibold leading-tight text-primary">{place.nama}</h3>
-                  <span className={`flex shrink-0 items-center gap-1.5 ${statusClass}`}>
-                    <span className={`size-2 rounded-full ${dotClass} ${operationalStatus !== "unknown" ? "animate-pulse" : ""}`} />
-                    {statusLabel}
+            <article key={place.id} className="flex h-full flex-col">
+              {/* ───────── Card utama ───────── */}
+              <div className="relative z-20 flex flex-1 flex-col rounded-2xl border border-primary/15 bg-card p-5 shadow-warm sm:p-6">
+                {/* Nama */}
+                <h3 className="text-lg font-semibold leading-snug text-primary">
+                  {hasValue(place.nama) ? place.nama : <Missing />}
+                </h3>
+
+                {/* Status + rating */}
+                <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+                  <span
+                    className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${status.pill}`}
+                  >
+                    <span
+                      className={`size-2 rounded-full ${status.dot} ${
+                        hoursAvailable && status.label !== "Tidak diketahui" ? "animate-pulse motion-reduce:animate-none" : ""
+                      }`}
+                      aria-hidden="true"
+                    />
+                    {hoursAvailable ? status.label : MISSING}
                   </span>
-                </div>
 
-                <div className="mt-4 flex items-center gap-2 text-sm">
-                  <Clock3 className="size-5 text-gold" aria-hidden="true" />
-                  <div>
-                    <p className="font-semibold text-primary">Jam Operasional</p>
-                    <p className="text-muted-foreground">{place.jamBuka ?? "Jam buka belum tersedia"}</p>
-                  </div>
-                </div>
-
-                <div className="mt-4 flex items-start gap-2 text-sm text-muted-foreground">
-                  <MapPin className="mt-0.5 size-5 shrink-0 text-gold" aria-hidden="true" />
-                  <span>{place.alamat}</span>
-                </div>
-                {place.rentangHarga && (
-                  <p className="mt-3 text-sm font-medium text-olive">
-                    Perkiraan harga: {place.rentangHarga}
-                  </p>
-                )}
-
-                <div className="relative -mx-5 mt-auto flex items-center justify-between gap-3 bg-primary px-5 py-3 text-primary-foreground sm:-mx-6 sm:px-6">
-                  <span className="flex items-center gap-2 font-semibold">
-                    <Navigation className="size-5" aria-hidden="true" />
-                    {locationState === "loading"
-                      ? "Mengukur jarak..."
-                      : distance !== undefined
-                        ? `${formatDistance(distance)} dari Anda`
-                        : "Jarak tidak tersedia"}
-                  </span>
-                  <div className="flex items-center gap-3">
-                    {place.rating !== null && (
-                      <span className="flex items-center gap-1 text-sm">
-                        <Star className="size-4 fill-gold text-gold" aria-hidden="true" />
-                        {place.rating} ({place.jumlahUlasan})
-                      </span>
+                  <span className="inline-flex items-center gap-1.5 text-sm">
+                    <Star
+                      className={`size-4 ${ratingAvailable ? "fill-gold text-gold" : "text-muted-foreground"}`}
+                      aria-hidden="true"
+                    />
+                    {ratingAvailable ? (
+                      <span className="font-semibold text-foreground">{place.rating}</span>
+                    ) : (
+                      <Missing />
                     )}
-                    <a
-                      href={place.mapsUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1 rounded-sm bg-card px-3 py-2 text-sm font-medium text-primary transition-colors hover:bg-secondary focus-visible:ring-4 focus-visible:ring-ring/60"
-                    >
-                      View in Maps <ExternalLink className="size-4" aria-hidden="true" />
-                    </a>
+                  </span>
+
+                  <span className="inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+                    <MessageSquare className="size-4 text-gold" aria-hidden="true" />
+                    {hasValue(place.jumlahUlasan) ? (
+                      `${place.jumlahUlasan} ulasan`
+                    ) : (
+                      <Missing />
+                    )}
+                  </span>
+                </div>
+
+                <div className="my-4 h-px bg-border" />
+
+                {/* Detail */}
+                <div className="space-y-3.5 text-sm">
+                  {/* Jam operasional (selalu terbuka) */}
+                  <div className="flex items-start gap-2.5">
+                    <Clock3 className="mt-0.5 size-5 shrink-0 text-gold" aria-hidden="true" />
+                    <div>
+                      <p className="font-medium text-primary">Jam Operasional</p>
+                      <div className="mt-1 space-y-0.5 text-muted-foreground">
+                        {hoursAvailable ? (
+                          hoursLines.map((line) => <p key={line}>{line}</p>)
+                        ) : (
+                          <Missing />
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Alamat */}
+                  <div className="flex items-start gap-2.5">
+                    <MapPin className="mt-0.5 size-5 shrink-0 text-gold" aria-hidden="true" />
+                    <span className="text-muted-foreground">
+                      {hasValue(place.alamat) ? place.alamat : <Missing />}
+                    </span>
+                  </div>
+
+                  {/* Harga */}
+                  <div className="flex items-start gap-2.5">
+                    <Banknote className="mt-0.5 size-5 shrink-0 text-gold" aria-hidden="true" />
+                    <span className={hasValue(place.rentangHarga) ? "font-medium text-olive" : ""}>
+                      {hasValue(place.rentangHarga) ? (
+                        <>Perkiraan harga: {place.rentangHarga}</>
+                      ) : (
+                        <Missing />
+                      )}
+                    </span>
                   </div>
                 </div>
               </div>
+
+              {/* ───────── Layer belakang (efek tumpukan) ───────── */}
+              {/* Footer: selebar card utama, sedikit masuk ke bawahnya */}
+              <div className="relative z-10 -mt-5 flex flex-wrap items-center justify-between gap-x-4 gap-y-3 rounded-b-2xl bg-primary px-5 pb-3.5 pt-8 text-primary-foreground shadow-warm sm:px-6">
+                <div className="flex items-center gap-3">
+                  <span
+                    className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary-foreground/15"
+                    aria-hidden="true"
+                  >
+                    <Navigation className="size-4" />
+                  </span>
+                  <p className="font-semibold leading-tight" aria-live="polite">
+                    {locationState === "loading" ? (
+                      "Mengukur jarak..."
+                    ) : distance !== undefined ? (
+                      <>
+                        {formatDistance(distance)}{" "}
+                        <span className="font-normal text-primary-foreground/80">dari Anda</span>
+                      </>
+                    ) : (
+                      <span className="font-normal italic text-primary-foreground/80">{MISSING}</span>
+                    )}
+                  </p>
+                </div>
+
+                {hasValue(place.mapsUrl) ? (
+                  <a
+                    href={place.mapsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-md bg-card px-3 py-2 text-sm font-medium text-primary transition-colors hover:bg-secondary focus-visible:ring-4 focus-visible:ring-ring/60 motion-reduce:transition-none"
+                  >
+                    Maps <ExternalLink className="size-4" aria-hidden="true" />
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center gap-1.5 text-sm italic text-primary-foreground/80">
+                    <ExternalLink className="size-4" aria-hidden="true" /> {MISSING}
+                  </span>
+                )}
+              </div>
+
             </article>
           );
         })}
