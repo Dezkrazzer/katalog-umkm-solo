@@ -2,9 +2,9 @@ import type { Umkm } from "@/data/umkm";
 
 export const umkmLenjongan: Umkm[] = [
   {
-    "id": "lenjongan-lenjongan-yu-sum-ps-gedhe-visited-link",
-    "nama": "Lenjongan \"Yu Sum\" Ps.Gedhe · Visited link",
-    "alamat": "Jl. Jend. Urip Sumoharjo",
+    "id": "lenjongan-lenjongan-yu-sum-ps-gedhe",
+    "nama": "Lenjongan \"Yu Sum\" Ps.Gedhe",
+    "alamat": "Jl. Jend. Urip Sumoharjo, Sudiroprajan, Jebres",
     "rating": 4.4,
     "jumlahUlasan": 69,
     "rentangHarga": "Rp 1–25.000",
@@ -18,7 +18,7 @@ export const umkmLenjongan: Umkm[] = [
   {
     "id": "lenjongan-tenongan-min-snack-jajan-pasar-solo",
     "nama": "Tenongan Min Snack Jajan Pasar Solo",
-    "alamat": "CRPH+XPM, Jl. Griya Bawono",
+    "alamat": "Jl. Griya Bawono, Kepatihan Kulon, Jebres",
     "rating": 5.0,
     "jumlahUlasan": 30,
     "rentangHarga": "Rp 1–25.000",
@@ -32,13 +32,13 @@ export const umkmLenjongan: Umkm[] = [
   {
     "id": "lenjongan-gede-hardjonagoro-market",
     "nama": "Gede Hardjonagoro Market",
-    "alamat": "Alamat tidak tersedia",
+    "alamat": "Jl. Jend. Urip Sumoharjo, Sudiroprajan, Jebres",
     "rating": 4.6,
     "jumlahUlasan": 24924,
     "rentangHarga": null,
     "kategori": "Traditional market",
     "status": "Buka 24 jam",
-    "jamBuka": "Jl. Jend. Urip Sumoharjo",
+    "jamBuka": null,
     "mapsUrl": "https://www.google.com/maps/place/Gede+Hardjonagoro+Market/data=!4m7!3m6!1s0x2e7a16f228336cdd:0x700185159eb67ef5!8m2!3d-7.569377!4d110.8315563!16s%2Fg%2F12214v6j!19sChIJ3WwzKPIWei4R9X62nhWFAXA?authuser=0&hl=en&g_ep=EgoyMDI2MTAyMC4wIJJjKgBIAVAD&rclk=1",
     "latitude": -7.569377,
     "longitude": 110.8315563
@@ -46,7 +46,7 @@ export const umkmLenjongan: Umkm[] = [
   {
     "id": "lenjongan-tenongan-mbak-yanti",
     "nama": "Tenongan mbak yanti",
-    "alamat": "Jl. Purwopuran No.63-65",
+    "alamat": "Jl. Purwopuran No.63-65, Purwodiningratan, Jebres",
     "rating": 4.8,
     "jumlahUlasan": 22,
     "rentangHarga": null,
@@ -60,7 +60,7 @@ export const umkmLenjongan: Umkm[] = [
   {
     "id": "lenjongan-lenjongan",
     "nama": "Lenjongan",
-    "alamat": "",
+    "alamat": "Sami Luwes, Jl. Honggowongso, Sriwedari, Laweyan",
     "rating": 4.0,
     "jumlahUlasan": 1,
     "rentangHarga": null,
@@ -70,5 +70,61 @@ export const umkmLenjongan: Umkm[] = [
     "mapsUrl": "https://www.google.com/maps/place/Lenjongan/data=!4m7!3m6!1s0x2e7a17be0f2d4567:0xd899b36fd7caa2f7!8m2!3d-7.5691794!4d110.8169752!16s%2Fg%2F11j2p03rsw!19sChIJZ0UtD74Xei4R96LK12-zmdg?authuser=0&hl=en&g_ep=EgoyMDI2MTAyMC4wIJJjKgBIAVAD&rclk=1",
     "latitude": -7.5691794,
     "longitude": 110.8169752
+  },
+  {
+    "id": "lenjongan-lenjongan-bu-rubi",
+    "nama": "Lenjongan Bu Rubi",
+    "alamat": "Pasar Gede, Jl. Jend. Urip Sumoharjo, Sudiroprajan, Jebres",
+    "rating": null,
+    "jumlahUlasan": 0,
+    "rentangHarga": null,
+    "kategori": "Hawker stall",
+    "status": "Tutup",
+    "jamBuka": ". Opens 7.00 am",
+    "mapsUrl": "https://www.google.com/maps/place/Lenjongan+Bu+Rubi/data=!3m1!4b1!4m6!3m5!1s0x2e7a17007596ff93:0xb01687cc9d066e65!8m2!3d-7.5690611!4d110.831842!16s%2Fg%2F11nj2p05w5?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D",
+    "latitude": -7.569023876261165, 
+    "longitude": 110.83174544047856
+  },
+  {
+    "id": "lenjongan-lenjongan-bu-pur",
+    "nama": "Lenjongan Bu Pur",
+    "alamat": "Jl. Tirtorejo Utara, Pajang, Laweyan",
+    "rating": 5.0,
+    "jumlahUlasan": 1,
+    "rentangHarga": null,
+    "kategori": "Restaurant",
+    "status": null,
+    "jamBuka": null,
+    "mapsUrl": "https://www.google.com/maps/place/Lenjongan+Bu+Pur/data=!4m8!3m7!1s0x2e7a15cae313206b:0x384c146d278c0da8!8m2!3d-7.5716998!4d110.7864472!9m1!1b1!16s%2Fg%2F11cmy481yv?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D",
+    "latitude": -7.571674032182089, 
+    "longitude": 110.78644746637836 
+  },
+  {
+    "id": "lenjongan-gethuk-lenjongan-bu-lastri",
+    "nama": "Gethuk Lenjongan Bu Lastri",
+    "alamat": "Jl. Bahagia, Dusun III, Makamhaji, Kartasura, Sukoharjo",
+    "rating": 4.9,
+    "jumlahUlasan": 7,
+    "rentangHarga": null,
+    "kategori": "Shopping mall",
+    "status": "Buka",
+    "jamBuka": ". Closes 6.00 pm",
+    "mapsUrl": "https://www.google.com/maps/place/Gethuk+Lenjongan+Bu+Lastri/data=!4m6!3m5!1s0x2e7a144ccae7afe9:0x9a45dd7ee060e2ed!8m2!3d-7.5703143!4d110.7761381!16s%2Fg%2F11hbvb0g11?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D",
+    "latitude": -7.570305953706812, 
+    "longitude": 110.77614571337242  
+  },
+  {
+    "id": "lenjongan-lenjongan-mbak-tri",
+    "nama": "Lenjongan MBAK TRI",
+    "alamat": "Jl Benowo 2 gang Pendowo 2 Sonojiwan, Dusun I, Makamhaji, Kartasura, Sukoharjo",
+    "rating": 5.0,
+    "jumlahUlasan": 2,
+    "rentangHarga": null,
+    "kategori": "Soup kitchen",
+    "status": null,
+    "jamBuka": null,
+    "mapsUrl": "https://www.google.com/maps/place/Lenjongan+MBAK+TRI/data=!4m16!1m9!3m8!1s0x2e7a1520618b8b1f:0x2811faa7f0ef77d4!2sLenjongan+MBAK+TRI!8m2!3d-7.57205!4d110.7818711!9m1!1b1!16s%2Fg%2F11vd9xmdch!3m5!1s0x2e7a1520618b8b1f:0x2811faa7f0ef77d4!8m2!3d-7.57205!4d110.7818711!16s%2Fg%2F11vd9xmdch?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D",
+    "latitude": -7.571984008988115, 
+    "longitude": 110.78184610558932 
   },
 ];
