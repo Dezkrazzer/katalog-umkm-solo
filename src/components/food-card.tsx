@@ -14,7 +14,7 @@ type FoodCardProps = {
 
 export function FoodCard({ item }: FoodCardProps) {
   return (
-    <Link href={`/detail/${item.slug}`} className="block h-full">
+    <Link href={`/detail/${item.slug}`} transitionTypes={["nav-forward"]} className="block h-full">
       <Card
         className={[
           "group/food relative h-full gap-0 rounded-lg border border-border bg-card py-0 shadow-warm ring-0",

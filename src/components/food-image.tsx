@@ -44,8 +44,6 @@ export function FoodImage({ src, alt, name, sizes, eager = false, className }: F
         alt={alt}
         fill
         sizes={sizes}
-        // Unsplash already serves a resized file (?w=800); load it directly, no image proxy.
-        unoptimized
         loading={eager ? "eager" : "lazy"}
         decoding="async"
         onLoad={() => setStatus("loaded")}
