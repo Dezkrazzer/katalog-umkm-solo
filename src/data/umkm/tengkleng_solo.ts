@@ -4,7 +4,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-solo-bu-jito-dlidir",
     "nama": "Tengkleng Solo Bu Jito Dlidir",
-    "alamat": "Jl. Kolonel Sugiyono No.67",
+    "alamat": "Jl. Kolonel Sugiyono No.67, Kadipiro, Banjarsari",
     "rating": 4.3,
     "jumlahUlasan": 1413,
     "rentangHarga": "Rp 25–50K",
@@ -18,7 +18,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-warung-tengkleng-mbak-diah",
     "nama": "Warung Tengkleng Mbak Diah",
-    "alamat": "CR45+QJ9, Jl. Tj. Anom, RT.01/RW.05",
+    "alamat": "Jl. Tj. Anom, RT.01/RW.05, Tanjung Anom, Kwarasan, Grogol, Sukoharjo",
     "rating": 4.3,
     "jumlahUlasan": 4696,
     "rentangHarga": "Rp 50–75K",
@@ -32,7 +32,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-warung-makan-tengkleng-barokah",
     "nama": "Warung Makan Tengkleng Barokah",
-    "alamat": "Jl. Honggowongso No.140",
+    "alamat": "Jl. Honggowongso No.140, Tipes, Serengan",
     "rating": 4.5,
     "jumlahUlasan": 676,
     "rentangHarga": "Rp 25–50K",
@@ -44,9 +44,9 @@ export const umkmTengklengSolo: Umkm[] = [
     "longitude": 110.8150182
   },
   {
-    "id": "tengkleng-solo-sate-kambing-thengkleng-rica-rica-pak-manto-visited-link",
-    "nama": "Sate Kambing & Thengkleng Rica-Rica Pak Manto · Visited link",
-    "alamat": "Jl. Honggowongso No.36",
+    "id": "tengkleng-solo-sate-kambing-thengkleng-rica-rica-pak-manto",
+    "nama": "Sate Kambing & Thengkleng Rica-Rica Pak Manto",
+    "alamat": "Jl. Honggowongso No.36, Sriwedari, Laweyan",
     "rating": 4.4,
     "jumlahUlasan": 18000,
     "rentangHarga": "Rp 50–100K",
@@ -60,9 +60,9 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-kambing-bu-pon",
     "nama": "Tengkleng Kambing Bu Pon",
-    "alamat": "Shelter Lojiwetan, Jl. Kapten Mulyadi",
+    "alamat": "Shelter Lojiwetan, Jl. Kapten Mulyadi, Kedung Lumbu, Pasar Kliwon",
     "rating": 4.4,
-    "jumlahUlasan": 718,
+    "jumlahUlasan": 719,
     "rentangHarga": "Rp 25–50K",
     "kategori": "Satay restaurant",
     "status": "Buka",
@@ -74,7 +74,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-klewer-ibu-edi",
     "nama": "Tengkleng Klewer Ibu Edi",
-    "alamat": "PASAR KLEWER, Jl. DR. Radjiman",
+    "alamat": "PASAR KLEWER, Jl. DR. Radjiman, Kauman, Gajahan, Pasar Kliwon",
     "rating": 4.2,
     "jumlahUlasan": 1888,
     "rentangHarga": "Rp 50–75K",
@@ -88,7 +88,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-yu-tentrem",
     "nama": "Tengkleng Yu Tentrem",
-    "alamat": "FR3H+6VC Kampung Ngadisono, Jl. Letjen Sutoyo",
+    "alamat": "Kampung Ngadisono, Jl. Letjen Sutoyo, Kadipiro, Banjarsari",
     "rating": 4.5,
     "jumlahUlasan": 261,
     "rentangHarga": "Rp 1–100.000",
@@ -102,7 +102,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-gongso-sop-tengkleng-dedet",
     "nama": "Tengkleng Gongso & Sop Tengkleng DEDET",
-    "alamat": "Jl.Yos Sudarso, Joyotakan",
+    "alamat": "Jl.Yos Sudarso, Joyotakan, Kwarasan, Grogol, Sukoharjo",
     "rating": 4.6,
     "jumlahUlasan": 247,
     "rentangHarga": "Rp 50–75K",
@@ -116,7 +116,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-dan-rawon-mas-babo",
     "nama": "Tengkleng dan Rawon Mas Babo",
-    "alamat": "Jl. Manyar No.5",
+    "alamat": "Jl. Manyar No.5, Kerten, Laweyan",
     "rating": 4.8,
     "jumlahUlasan": 124,
     "rentangHarga": "Rp 25–50K",
@@ -130,7 +130,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-kambing-mas-mul",
     "nama": "Tengkleng Kambing Mas Mul",
-    "alamat": "Cengklik, RT.03/RW.20",
+    "alamat": "Cengklik, RT.03/RW.20, Nusukan, Banjarsari",
     "rating": 4.4,
     "jumlahUlasan": 130,
     "rentangHarga": "Rp 25–50K",
@@ -144,11 +144,11 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-solo-mbok-simu",
     "nama": "Tengkleng Solo Mbok Simu",
-    "alamat": "FQ53+7R6, Jl. Astina",
+    "alamat": "Jl. Astina, Sanggir Lor, Paulan, Colomadu, Karanganyar",
     "rating": 4.3,
     "jumlahUlasan": 50,
     "rentangHarga": "Rp 25–50K",
-    "kategori": "Indonesian",
+    "kategori": "Indonesian restaurant",
     "status": "Buka",
     "jamBuka": "· Closes 5.00 pm",
     "mapsUrl": "https://www.google.com/maps/place/Tengkleng+Solo+Mbok+Simu/data=!4m7!3m6!1s0x2e7a1588c7bafeb9:0x58c1ea579a80138a!8m2!3d-7.5418962!4d110.7546091!16s%2Fg%2F11qbgrdhyh!19sChIJuf66x4gVei4RihOAmlfqwVg?authuser=0&hl=en&g_ep=EgoyMDI2MTAyMC4wIJJjKgBIAVAD&rclk=1",
@@ -158,7 +158,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-ajaib",
     "nama": "Tengkleng Ajaib",
-    "alamat": "CRCQ+87R",
+    "alamat": "Jl. Sungai Indragiri, Sangkrah, Pasar Kliwon",
     "rating": 4.5,
     "jumlahUlasan": 57,
     "rentangHarga": "Rp 25–50K",
@@ -172,11 +172,11 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-selat-pak-pri",
     "nama": "Tengkleng & Selat Pak Pri",
-    "alamat": "Jl. Singosari Utama No.12A, RT.4/RW.1",
+    "alamat": "Jl. Singosari Utama No.12A, RT.4/RW.1, Nusukan, Banjarsari",
     "rating": 4.3,
     "jumlahUlasan": 296,
     "rentangHarga": "Rp 25–50K",
-    "kategori": "Indonesian",
+    "kategori": "Indonesian restaurant",
     "status": "Buka",
     "jamBuka": "· Closes 9.00 pm",
     "mapsUrl": "https://www.google.com/maps/place/Tengkleng+%26+Selat+Pak+Pri/data=!4m7!3m6!1s0x2e7a175a338f3693:0xa14b1ec66d9c1b83!8m2!3d-7.5433568!4d110.8173392!16s%2Fg%2F11z2pfn81w!19sChIJkzaPM1oXei4RgxucbcYeS6E?authuser=0&hl=en&g_ep=EgoyMDI2MTAyMC4wIJJjKgBIAVAD&rclk=1",
@@ -186,7 +186,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-oleh-oleh-tengkleng-kambing-mas-ker-khusus-pesanan-tengkleng-kwali-terenak-dan-terjangkau-di-solo-pesan-antar",
     "nama": "OLEH-OLEH TENGKLENG KAMBING MAS KER | Khusus Pesanan Tengkleng kwali terenak dan terjangkau di Solo | PESAN - ANTAR",
-    "alamat": "Jl. Kelud Sel.",
+    "alamat": "Jl. Kelud Selatan, Nusukan, Banjarsari",
     "rating": 5.0,
     "jumlahUlasan": 1,
     "rentangHarga": null,
@@ -200,7 +200,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-sate-kambing-mbok-galak",
     "nama": "Sate Kambing Mbok Galak",
-    "alamat": "Jl. Ki Mangun Sarkoro No.112 Sumber Banjarsari",
+    "alamat": "Jl. Ki Mangun Sarkoro No.112, Sumber, Banjarsari",
     "rating": 4.4,
     "jumlahUlasan": 7472,
     "rentangHarga": "Rp 50–75K",
@@ -214,10 +214,10 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-warung-tengkleng",
     "nama": "Warung Tengkleng",
-    "alamat": "CRW7+PRP",
+    "alamat": "Jl. Cocak V, Gilingan, Banjarsari",
     "rating": 4.9,
     "jumlahUlasan": 14,
-    "rentangHarga": null,
+    "rentangHarga": "Rp 25–50K",
     "kategori": "Diner",
     "status": "Buka",
     "jamBuka": "· Closes 9.00 pm",
@@ -228,7 +228,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-bu-gondo",
     "nama": "Tengkleng Bu Gondo",
-    "alamat": "Jl. Letjen Suprapto No.35",
+    "alamat": "Jl. Letjen Suprapto No.35, Sumber, Banjarsari",
     "rating": 4.6,
     "jumlahUlasan": 54,
     "rentangHarga": "Rp 25–50K",
@@ -242,9 +242,9 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-sate-kambing-buntel-pak-h-kasdi",
     "nama": "Sate Kambing-Buntel Pak H. Kasdi",
-    "alamat": "Jl. Walter Monginsidi No.107",
+    "alamat": "Jl. Walter Monginsidi No.107, Kestalan, Banjarsari",
     "rating": 4.5,
-    "jumlahUlasan": 6438,
+    "jumlahUlasan": 6441,
     "rentangHarga": "Rp 25–50K",
     "kategori": "Satay restaurant",
     "status": "Buka",
@@ -256,10 +256,10 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-spesial-tengkleng-mbak-kasmi",
     "nama": "Spesial Tengkleng Mbak Kasmi",
-    "alamat": "CVGJ+RW6",
+    "alamat": "Jl. Palur - Karanganyar, Swakerya, Palur, Mojolaban, Sukoharjo",
     "rating": 3.9,
     "jumlahUlasan": 21,
-    "rentangHarga": null,
+    "rentangHarga": "Rp 25–50K",
     "kategori": "Lunch",
     "status": "Buka",
     "jamBuka": "· Closes 5.00 pm",
@@ -270,7 +270,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-sate-kambing-dan-tengkleng-khas-klewer-mbah-rejo",
     "nama": "Sate Kambing dan Tengkleng khas Klewer \"Mbah Rejo\"",
-    "alamat": "CP6W+VWW, Jl. Veteran",
+    "alamat": "Jl. Veteran, Dusun II, Luwang, Gatak, Sukoharjo",
     "rating": 4.5,
     "jumlahUlasan": 21,
     "rentangHarga": "Rp 1–25.000",
@@ -284,7 +284,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-dan-sate-bu-jito-dlidir-gebang",
     "nama": "Tengkleng dan sate Bu jito dlidir,Gebang",
-    "alamat": "Jl. Bromo Raya No.2",
+    "alamat": "Jl. Bromo Raya No.2, Kadipiro, Banjarsari",
     "rating": 4.5,
     "jumlahUlasan": 118,
     "rentangHarga": "Rp 25–50K",
@@ -298,13 +298,13 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-pak-dar-sriwedari",
     "nama": "Tengkleng pak Dar Sriwedari",
-    "alamat": "Jl. Kebangkitan Nasional",
+    "alamat": "Jl. Kebangkitan Nasional, Sriwedari, Laweyan",
     "rating": 4.5,
     "jumlahUlasan": 33,
     "rentangHarga": "Rp 25–50K",
     "kategori": "Restaurant",
     "status": "Tutup",
-    "jamBuka": "· Opens 9.30 am Tue",
+    "jamBuka": "· Opens 9.30 am",
     "mapsUrl": "https://www.google.com/maps/place/Tengkleng+pak+Dar+Sriwedari/data=!4m7!3m6!1s0x2e7a177d05fd06c9:0x3cc1884da07ce91!8m2!3d-7.569357!4d110.8114253!16s%2Fg%2F11fkr27cql!19sChIJyQb9BX0Xei4Rkc4H2oQYzAM?authuser=0&hl=en&g_ep=EgoyMDI2MTAyMC4wIJJjKgBIAVAD&rclk=1",
     "latitude": -7.569357,
     "longitude": 110.8114253
@@ -312,7 +312,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-bu-sarimin-cemani",
     "nama": "Tengkleng Bu Sarimin Cemani",
-    "alamat": "Jl. Pinang I No.30, RT.02/RW.09",
+    "alamat": "Jl. Pinang I No.30, RT.02/RW.09, Cemani, Grogol, Sukoharjo",
     "rating": 4.6,
     "jumlahUlasan": 62,
     "rentangHarga": null,
@@ -326,7 +326,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-makan-tengkleng",
     "nama": "Makan tengkleng",
-    "alamat": "",
+    "alamat": "Jl. Kebangkitan Nasional No.6, Sriwedari, Laweyan",
     "rating": 5.0,
     "jumlahUlasan": 5,
     "rentangHarga": null,
@@ -340,7 +340,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-warung-tengkleng-sapi-dan-kambing-bu-harsi",
     "nama": "Warung Tengkleng Sapi Dan Kambing Bu Harsi",
-    "alamat": "Jl. Merak",
+    "alamat": "Jl. Merak, Dusun I, Langenharjo, Grogol, Sukoharjo",
     "rating": 2.1,
     "jumlahUlasan": 62,
     "rentangHarga": "Rp 75–200K",
@@ -354,7 +354,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-sate-kambing-bu-hj-bejo",
     "nama": "Sate Kambing Bu Hj. Bejo",
-    "alamat": "Jl. Sungai Sebakung No.10",
+    "alamat": "Jl. Sungai Sebakung No.10, Kedung Lumbu, Pasar Kliwon",
     "rating": 4.5,
     "jumlahUlasan": 6191,
     "rentangHarga": "Rp 50–75K",
@@ -368,7 +368,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-madam-jito-ndlidir-special-lamb",
     "nama": "Madam Jito Ndlidir Special Lamb",
-    "alamat": "Jl. Raya Songgo Langit No.2",
+    "alamat": "Jl. Raya Songgo Langit No.2, Songgolangit, Gentan, Baki, Sukoharjo",
     "rating": 4.3,
     "jumlahUlasan": 110,
     "rentangHarga": "Rp 25–50K",
@@ -382,7 +382,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-bu-suyek",
     "nama": "Tengkleng Bu Suyek",
-    "alamat": "Jl. Utara Pasar Besar No.34",
+    "alamat": "Jl. Utara Pasar Besar No.34, Sudiroprajan, Jebres",
     "rating": 3.9,
     "jumlahUlasan": 31,
     "rentangHarga": "Rp 25–50K",
@@ -396,7 +396,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-sate-kambing-mas-di",
     "nama": "Sate Kambing \"Mas Di\"",
-    "alamat": "Jl. Slamet Riyadi No.162B",
+    "alamat": "Jl. Slamet Riyadi No.162B, Kopen, Ngadirejo, Kartasura, Sukoharjo",
     "rating": 4.5,
     "jumlahUlasan": 2365,
     "rentangHarga": "Rp 25–50K",
@@ -410,9 +410,9 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-sate-kambing-pak-h-bejo-solo-cabang-mangkunegaran",
     "nama": "Sate Kambing PAK H.BEJO SOLO cabang MANGKUNEGARAN",
-    "alamat": "Jl. Sugiyopranoto",
+    "alamat": "Jl. Sugiyopranoto, Keprabon, Banjarsari",
     "rating": 4.6,
-    "jumlahUlasan": 1943,
+    "jumlahUlasan": 1951,
     "rentangHarga": "Rp 25–50K",
     "kategori": "Satay restaurant",
     "status": "Buka",
@@ -424,7 +424,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-pincuk-ps-ghede",
     "nama": "Tengkleng Pincuk Ps.Ghede",
-    "alamat": "",
+    "alamat": "Jl. Jend. Urip Sumoharjo, Sudiroprajan, Jebres",
     "rating": 4.3,
     "jumlahUlasan": 18,
     "rentangHarga": "Rp 50–75K",
@@ -438,7 +438,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-bu-lastri-354-sate-aselabar-jurug-solo",
     "nama": "Tengkleng Bu Lastri 354 (sate Aselabar Jurug solo)",
-    "alamat": "Jl. Amarta Kapohan, RT.02/RW.06",
+    "alamat": "Jl. Amarta Kapohan, RT.02/RW.06,, Jurung, Ngringo, Jaten, Karanganyar",
     "rating": 4.8,
     "jumlahUlasan": 33,
     "rentangHarga": "Rp 25–50K",
@@ -452,9 +452,9 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-sate-kambing-pak-mardi-mangkunegaran",
     "nama": "Sate Kambing \"Pak Mardi\" Mangkunegaran",
-    "alamat": "Jl. Yosodipuro No.22",
+    "alamat": "Jl. Yosodipuro No.22, Ketelan, Banjarsari",
     "rating": 4.6,
-    "jumlahUlasan": 1382,
+    "jumlahUlasan": 1384,
     "rentangHarga": "Rp 25–50K",
     "kategori": "Satay restaurant",
     "status": "Buka",
@@ -466,7 +466,7 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-warung-tengkleng-mbah-karmin",
     "nama": "Warung Tengkleng Mbah Karmin",
-    "alamat": "",
+    "alamat": "Jl. Bibis Wetan, Tegalharjo, Jebres",
     "rating": 4.6,
     "jumlahUlasan": 53,
     "rentangHarga": null,
@@ -480,15 +480,29 @@ export const umkmTengklengSolo: Umkm[] = [
   {
     "id": "tengkleng-solo-tengkleng-solo-mas-ker-di-colomadu",
     "nama": "Tengkleng Solo \"MAS KER\" di colomadu",
-    "alamat": "",
+    "alamat": "Jl. Adisumarmo RT.08/RW.01 Trowangsan, Krobyongan, Malangjiwan, Colomadu, Karanganyar",
     "rating": 4.5,
     "jumlahUlasan": 62,
     "rentangHarga": "Rp 50–75K",
     "kategori": "Restaurant",
-    "status": null,
+    "status": "Tutup sementara",
     "jamBuka": null,
     "mapsUrl": "https://www.google.com/maps/place/Tengkleng+Solo+%22MAS+KER%22+di+colomadu/data=!4m7!3m6!1s0x2e7a1481de8423d3:0x17d7352868eb4b83!8m2!3d-7.5304883!4d110.7556371!16s%2Fg%2F11f54qs304!19sChIJ0yOE3oEUei4Rg0vraCg11xc?authuser=0&hl=en&g_ep=EgoyMDI2MTAyMC4wIJJjKgBIAVAD&rclk=1",
     "latitude": -7.5304883,
     "longitude": 110.7556371
+  },
+  {
+    "id": "tengkleng-solo-tengkleng-selat-pak-pri-mojosongo",
+    "nama": "Tengkleng & Selat Pak Pri Mojosongo",
+    "alamat": "Jl. Tangkuban Perahu No.25, Mojosongo, Jebres",
+    "rating": 4.4,
+    "jumlahUlasan": 126,
+    "rentangHarga": "Rp 25–50K",
+    "kategori": "Indonesian restaurant",
+    "status": "Buka",
+    "jamBuka": "· Closes 10.00 pm",
+    "mapsUrl": "https://www.google.com/maps/place/Tengkleng+%26+Selat+Pak+Pri+Mojosongo/data=!4m6!3m5!1s0x2e7a1700478e37cd:0x4ab6442a9f529fca!8m2!3d-7.5400628!4d110.8426708!16s%2Fg%2F11ntthtr24?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI2MTAyNy4wIKXMDSoASAFQAw%3D%3D",
+    "latitude": -7.540032663110055, 
+    "longitude": 110.84267123068572
   },
 ];
