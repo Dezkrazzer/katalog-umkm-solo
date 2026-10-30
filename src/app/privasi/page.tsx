@@ -200,14 +200,6 @@ export default function PrivacyPage() {
               </p>
             </PolicySection>
 
-            <PolicySection id="anak" title="Pengguna anak">
-              <p>
-                SoloFood dapat digunakan oleh semua umur dan tidak secara sengaja mengumpulkan data pribadi
-                anak. Untuk pengguna di bawah 17 tahun, izin lokasi sebaiknya diberikan dengan pendampingan
-                orang tua atau wali.
-              </p>
-            </PolicySection>
-
             <PolicySection id="perubahan" title="Perubahan kebijakan">
               <p>
                 Kebijakan ini dapat diperbarui jika ada fitur baru yang memengaruhi pemrosesan data. Tanggal
